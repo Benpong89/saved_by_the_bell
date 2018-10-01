@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.guestSignin = this.guestSignin.bind(this);
+    // this.guestSignin = this.guestSignin.bind(this);
     this.props.resetErrors();
   }
 
@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
                 <img className="img-logo" src={window.newlogoURL} />
               </Link>
               <Link className="text-logo" to="/">
-                <h1 className="text-logo">slang</h1>
+                <h1 className="text-logo">Saved by the Bell</h1>
               </Link>
             </div>
             <GreetingContainer />
