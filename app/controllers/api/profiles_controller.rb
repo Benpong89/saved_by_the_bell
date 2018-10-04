@@ -18,6 +18,6 @@ class Api::ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:id, :fullname, :email, :zipcode, :summary, :description, :published, :imgURL, :resumeLink, :user_id)
+    params.require(:profile).permit(:fullname, :email, :zipcode, :summary, :description, :published, :imgURL, :resumeLink, :user_id)
   end
 end

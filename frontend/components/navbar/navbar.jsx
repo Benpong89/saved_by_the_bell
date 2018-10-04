@@ -7,6 +7,10 @@ class Navbar extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    this.props.requestAllProfiles();
+  }
+
   render() {
     return (
       <div className="navbar-container">

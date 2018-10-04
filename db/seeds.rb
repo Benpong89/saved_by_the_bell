@@ -11,24 +11,24 @@ Profile.destroy_all
 Category.destroy_all
 ProfileCategory.destroy_all
 
-users = User.create([
-                      { username: 'benpong89', password: '123456' },
-                      { username: 'johnsmith90', password: '123456' },
-                      { username: 'janedoe91', password: '123456' }
+User.create([
+              { username: 'benpong89', password: '123456' },
+              { username: 'johnsmith90', password: '123456' },
+              { username: 'janedoe91', password: '123456' }
 
-                    ])
+            ])
 
-profiles = Profile.create([
-                            { fullname: 'Ben Pong', email: 'benpong89@gmail.com', zipcode: '11355', summary: 'teaches dance', description: 'test description', published: true },
-                            { fullname: 'John Smith', email: 'johnsmith90@gmail.com', zipcode: '10010', summary: 'teaches singing', description: 'test description2', published: true },
-                            { fullname: 'Jane Doe', email: 'janedoe91@gmail.com', zipcode: '02446', summary: 'teaches Boxing', description: 'test description3', published: true }
-                          ])
+Profile.create([
+                 { fullname: 'Ben Pong', email: 'benpong89@gmail.com', zipcode: '11355', summary: 'teaches dance', description: 'test description', published: true, imgURL: 'testimgurl', resumeLink: 'testResumeLink' },
+                 { fullname: 'John Smith', email: 'johnsmith90@gmail.com', zipcode: '10010', summary: 'teaches singing', description: 'test description2', published: true, imgURL: 'testimgurl', resumeLink: 'testResumeLink' },
+                 { fullname: 'Jane Doe', email: 'janedoe91@gmail.com', zipcode: '02446', summary: 'teaches Boxing', description: 'test description3', published: true, imgURL: 'testimgurl', resumeLink: 'testResumeLink' }
+               ])
 
-categories = Category.create([
-                               { category: 'Dance' },
-                               { category: 'Art' },
-                               { category: 'Tutor' },
-                               { category: 'Sing' },
-                               { category: 'Sports' }
+Category.create([
+                  { category: 'Dance' },
+                  { category: 'Art' },
+                  { category: 'Tutor' },
+                  { category: 'Sing' },
+                  { category: 'Sports' }
 
-                             ])
+                ])
