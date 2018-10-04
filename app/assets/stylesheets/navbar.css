@@ -309,8 +309,8 @@ section {
 } */
 
 .navbar-container header {
-  height: 60px;
-  padding-top: 10px;
+  height: 100%;
+  padding: 10px;
 }
 
 /* .splash-header {

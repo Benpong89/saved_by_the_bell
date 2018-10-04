@@ -6,34 +6,35 @@ class SearchBar extends React.Component {
     super(props);
   }
 
-  //   const image_url = 'YOUR IMAGE URL';
-  // return (
-  //   <div className='home-card-view flex-center'
-  //        style={{ backgroundImage : `url(${image_url})` }}>
-  //
-  //     <div>
-
   render() {
     return (
       <div className="search-bar-container">
-        <form id="search-form" onSubmit="#">
-          Search by Category
-          <input
-            id="category-input"
-            type="text"
-            placeholder="ie 'Dance' or 'Art'"
-          />
-          <br />
-          Search by Zipcode
-          <input id="zipcode-input" type="integer" placeholder="Zipcode" />
-          <br />
-          <button id="search-button" type="submit">
-            Submit
-          </button>
-        </form>
+        <input
+          id="category-input"
+          type="text"
+          placeholder="ie 'Dance' or 'Art'"
+        />
+        <input id="zipcode-input" type="integer" placeholder="Zipcode" />
       </div>
     );
   }
 }
 
 export default SearchBar;
+
+// <form id="search-form" onSubmit={this.props.signout}>
+//   Search by Category
+//   <input
+//     id="category-input"
+//     type="text"
+//     placeholder="ie 'Dance' or 'Art'"
+//   />
+//   <br />
+//   Search by Zipcode
+//   <input id="zipcode-input" type="integer" placeholder="Zipcode" />
+//   <br />
+//   <button id="search-button" type="submit">
+//     Submit
+//   </button>
+// </form>
+//

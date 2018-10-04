@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GreetingContainer from "../greeting/greeting_container";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -21,10 +22,7 @@ class Navbar extends React.Component {
                 <span className="hidden-desktop" />
               </label>
               <input type="checkbox" name="" id="open" />
-              <nav>
-                <a href="#/login">Login</a>
-                <a href="#/signup">Sign Up</a>
-              </nav>
+              <GreetingContainer />
             </div>
           </div>
         </header>
