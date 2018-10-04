@@ -13,10 +13,10 @@ class SearchBar extends React.Component {
         <input
           id="category-input"
           type="text"
-          placeholder="Category Search Here ie. 'Dance', 'Art' etc."
+          placeholder="Category #Dance #Art"
         />
         <br />
-        <input id="zipcode-input" type="integer" placeholder="Zipcode" />
+        <input id="zipcode-input" type="integer" placeholder="Zipcode #10010" />
       </div>
     );
   }

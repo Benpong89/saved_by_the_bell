@@ -90,3 +90,11 @@ input {
 #profile-username {
   color: white;
 }
+
+.search-bar-container input {
+  background: white !important;
+}
+
+.search-bar-container {
+  text-align: center;
+}

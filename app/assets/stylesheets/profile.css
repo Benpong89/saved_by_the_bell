@@ -1,5 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=K2D");
+
 .profile-index-container {
   height: 100vh;
   background: url(lightbulb.gif) no-repeat center center fixed;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-index-li-container {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  font-family: "K2D", sans-serif;
+}
+
+.profile-img {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 8px;
+  margin: 15px 5px 5px 5px;
+}
+
+.profile-index-item-ul {
+  font-size: 16px;
+  list-style: none;
+}
+
+.profile-index-item {
+  margin: 5px;
+  padding: 10px;
 }

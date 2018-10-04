@@ -12,7 +12,7 @@ class ProfileIndex extends React.Component {
     return (
       <section className="profile-index-container">
         <SearchBarContainer />
-        <ul>
+        <ul className="profile-index-item-ul">
           {this.props.profiles.map((profile, idx) => (
             <ProfileIndexItem key={idx} profile={profile} />
           ))}
