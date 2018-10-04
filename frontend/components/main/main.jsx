@@ -3,7 +3,6 @@ import { Route, Redirect, Switch, Link, HashRouter } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../../util/route_util";
 import NavbarContainer from "../navbar/navbar_container.jsx";
-import SearchBarContainer from "../search_bar/search_bar_container.jsx";
 import ProfileIndexContainer from "../profile/profile_index_container.jsx";
 
 class Main extends React.Component {
@@ -15,7 +14,6 @@ class Main extends React.Component {
     return (
       <div className="main-container">
         <NavbarContainer />
-        <SearchBarContainer />
         <ProfileIndexContainer />
       </div>
     );

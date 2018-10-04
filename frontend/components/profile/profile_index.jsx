@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProfileIndexItem from "./profile_index_item";
+import SearchBarContainer from "../search_bar/search_bar_container.jsx";
 
 class ProfileIndex extends React.Component {
   constructor(props) {
@@ -9,11 +10,14 @@ class ProfileIndex extends React.Component {
 
   render() {
     return (
-      <div className="profile-index-container">
+      <section className="profile-index-container">
+        <SearchBarContainer />
         <ul>
-          <ProfileIndexItem />
+          {this.props.profiles.map((profile, idx) => (
+            <ProfileIndexItem key={idx} profile={profile} />
+          ))}
         </ul>
-      </div>
+      </section>
     );
   }
 }
