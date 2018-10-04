@@ -9,19 +9,12 @@ class ProfileShow extends React.Component {
   render() {
     return (
       <div className="search-bar-container">
-        <form id="search-form" onSubmit="#">
-          Category
-          <input
-            id="amount-input"
-            type="integer"
-            placeholder="ie 'Dance' or 'Art'"
-          />
-          <br />
-          location
-          <input id="people-input" type="integer" placeholder="Zipcode" />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+        <ul>
+          <li>Profile info</li>
+          <li>Profile info</li>
+          <li>Profile info</li>
+          <li>Profile info</li>
+        </ul>
       </div>
     );
   }

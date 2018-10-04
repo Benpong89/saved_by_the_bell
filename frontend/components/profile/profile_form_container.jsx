@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
-import ProfileEdit from "./profile_edit";
+import ProfileForm from "./profile_form";
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
@@ -9,10 +9,10 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  signout: () => dispatch(signout())
+  logout: () => dispatch(logout())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProfileEdit);
+)(ProfileForm);

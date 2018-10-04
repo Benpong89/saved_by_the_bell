@@ -28,6 +28,65 @@ input {
   border-color: #355c7d;
 }
 
+#fullname-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background: none;
+  border-color: #355c7d;
+}
+
+#description-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background: none;
+  border-color: #355c7d;
+}
+
+#email-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background: none;
+  border-color: #355c7d;
+}
+
+#summary-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background: none;
+  border-color: #355c7d;
+}
+
+#resume-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background: none;
+  border-color: #355c7d;
+}
+
 #search-button {
   display: none;
+}
+
+#profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-button {
+  background: none;
+  border: none;
+}
+
+#profile-username {
+  color: white;
 }

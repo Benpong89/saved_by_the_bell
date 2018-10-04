@@ -1,7 +1,9 @@
-# == Schema Information
-#
-# Table name: profiles
-#
+@profiles.each do |profile|
+  json.set! profile.id do
+    json.extract! profile, :id, :fullname, :email, :zipcode, :summary, :description, :published, :imgURL, :resumeLink, :user_id
+  end
+end
+
 #  id          :bigint(8)        not null, primary key
 #  fullname    :string           not null
 #  email       :string           not null
@@ -14,13 +16,3 @@
 #  user_id     :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#
-
-class Profile < ApplicationRecord
-  validates :fullname, :email, :zipcode, :summary, :description, presence: true
-
-  belongs_to :user
-  has_many :profile_categories
-  has_many :categories,
-           through: :profile_categories
-end
