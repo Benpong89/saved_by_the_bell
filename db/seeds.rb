@@ -19,8 +19,9 @@ users = User.create([
                     ])
 
 profiles = Profile.create([
-                            { fullname: 'Ben Pong', email: 'benpong89@gmail.com', zipcode: '11355', summary: 'teaches dance', description: 'test description' },
-                            { fullname: 'John Smith', email: 'johnsmith90@gmail.com', zipcode: '10010', summary: 'teaches singing', description: 'test description' }
+                            { fullname: 'Ben Pong', email: 'benpong89@gmail.com', zipcode: '11355', summary: 'teaches dance', description: 'test description', published: true },
+                            { fullname: 'John Smith', email: 'johnsmith90@gmail.com', zipcode: '10010', summary: 'teaches singing', description: 'test description2', published: true },
+                            { fullname: 'Jane Doe', email: 'janedoe91@gmail.com', zipcode: '02446', summary: 'teaches Boxing', description: 'test description3', published: true }
                           ])
 
 categories = Category.create([
