@@ -14,9 +14,6 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <Link to={`/users/${this.props.currentUser.id}`}>
-          Link to user Profile
-        </Link>
         <NavbarContainer />
         This is the Main Page
         <SearchBarContainer />

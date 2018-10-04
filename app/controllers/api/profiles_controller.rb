@@ -1,4 +1,5 @@
 class Api::ProfilesController < ApplicationController
+  # check to make sure profile.published == true before return all profiles.
   def index
     @profiles = Profile.all
   end

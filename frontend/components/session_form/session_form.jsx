@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import GreetingContainer from ".././greeting/greeting_container";
-import NavbarContainer from "../navbar/navbar_container.jsx";
+import NavbarContainer from "../navbar/navbar_container";
 import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {

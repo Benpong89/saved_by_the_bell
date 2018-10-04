@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
-import ProfileShow from "./profile_show.jsx";
+import ProfileShow from "./profile_show";
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {

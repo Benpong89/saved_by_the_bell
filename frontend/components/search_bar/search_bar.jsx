@@ -9,11 +9,13 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar-container">
+        <h2>Search here for volunteer After-School Program leaders!</h2>
         <input
           id="category-input"
           type="text"
-          placeholder="ie 'Dance' or 'Art'"
+          placeholder="Category Search Here ie. 'Dance', 'Art' etc."
         />
+        <br />
         <input id="zipcode-input" type="integer" placeholder="Zipcode" />
       </div>
     );

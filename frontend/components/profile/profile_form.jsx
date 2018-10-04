@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavbarContainer from "../navbar/navbar_container.jsx";
+import NavbarContainer from "../navbar/navbar_container";
 
 class ProfileForm extends React.Component {
   constructor(props) {
