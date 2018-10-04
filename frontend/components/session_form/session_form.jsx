@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.guestlogin = this.guestlogin.bind(this);
+    this.guestlogin = this.guestlogin.bind(this);
     this.props.resetErrors();
   }
 
@@ -29,17 +29,11 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // guestlogin(e) {
-  //   e.preventDefault();
-  //   const randomUsers = [
-  //     { username: "Tony Stark", password: "123456" },
-  //   ];
-  //
-  //   const randomUser =
-  //     randomUsers[Math.floor(Math.random() * randomUsers.length)];
-  //
-  //   this.props.processForm(randomUser);
-  // }
+  guestlogin(e) {
+    e.preventDefault();
+    const guest = { username: "Tony Stark", password: "123456" };
+    this.props.processForm(guest);
+  }
 
   resetErrors() {
     this.setState({
@@ -61,50 +55,52 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form-container">
+      <div>
         <NavbarContainer />
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br />
-          <label className="login-title">{this.props.formType}</label>
-          <label className="session-errors-list">{this.renderErrors()}</label>
-          <div className="login-form">
+        <section className="session-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
             <br />
-            <label>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="username goes here"
-                className="login-input"
-              />
-            </label>
-            <br />
-            <label>
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="password goes here"
-                className="login-input"
-              />
-            </label>
-            <br />
-            <button className="session-submit" type="submit">
-              Continue
-              {"\u2192"}
-            </button>
-            <br />
-            <button
-              className={
-                "session-submit" +
-                (this.props.formType === "Sign up here!" ? " hidden" : "")
-              }
-              onClick={this.guestlogin}
-            >
-              Be my guest!
-            </button>
-          </div>
-        </form>
+            <label className="login-title">{this.props.formType}</label>
+            <label className="session-errors-list">{this.renderErrors()}</label>
+            <div className="login-form">
+              <br />
+              <label>
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="username goes here"
+                  className="login-input"
+                />
+              </label>
+              <br />
+              <label>
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="password goes here"
+                  className="login-input"
+                />
+              </label>
+              <br />
+              <button className="session-submit" type="submit">
+                Submit
+              </button>
+              <br />
+              <br />
+              <button
+                className={
+                  "session-submit" +
+                  (this.props.formType === "Sign up here!" ? " hidden" : "")
+                }
+                onClick={this.guestlogin}
+              >
+                Demo login
+              </button>
+            </div>
+          </form>
+        </section>
       </div>
     );
   }
