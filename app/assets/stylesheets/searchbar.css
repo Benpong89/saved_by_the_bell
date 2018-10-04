@@ -3,3 +3,31 @@
   background: url(lightbulb.gif) no-repeat center center fixed;
   background-size: cover;
 }
+
+input {
+  margin: 10px;
+  border-radius: 8px;
+  width: 200px;
+}
+
+#category-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background: none;
+  border-color: #355c7d;
+}
+
+#zipcode-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background: none;
+  border-color: #355c7d;
+}
+
+#search-button {
+  display: none;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import GreetingContainer from ".././greeting/greeting_container";
+import NavbarContainer from "../navbar/navbar_container.jsx";
 import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
@@ -61,20 +62,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <div className="login-form-container">
-          <header className="splash-header">
-            <div className="logo-nav">
-              <Link to="/">
-                <img className="img-logo" src={window.newlogoURL} />
-              </Link>
-              <Link className="text-logo" to="/">
-                <h1 className="text-logo">Saved by the Bell</h1>
-              </Link>
-            </div>
-            <GreetingContainer />
-          </header>
-        </div>
-
+        <NavbarContainer />
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
           <label className="login-title">{this.props.formType}</label>
@@ -123,3 +111,18 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
+
+// <div className="login-form-container">
+//   <header className="splash-header">
+//     <div className="logo-nav">
+//       <Link to="/">
+//         <img className="img-logo" src={window.newlogoURL} />
+//       </Link>
+//       <Link className="text-logo" to="/">
+//         <h1 className="text-logo">Saved by the Bell</h1>
+//       </Link>
+//     </div>
+//     <GreetingContainer />
+//   </header>
+// </div>
+//

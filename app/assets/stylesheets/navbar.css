@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:600");
+
 * {
   margin: 0;
   padding: 0;
@@ -77,17 +79,23 @@ header {
   width: 70%;
   text-align: right;
 }
+
 #open {
   display: none;
 }
+
 h1 {
   font-weight: 300;
   line-height: 40px;
+  font-family: "Nunito", sans-serif;
+  font-size: 35px;
 }
+
 a {
   text-decoration: none;
   color: white;
 }
+
 nav > a {
   position: relative;
   display: inline-block;
@@ -107,6 +115,9 @@ section {
   width: 100%;
   height: auto;
   background-image: -webkit-linear-gradient(#bdc3c7 0%, #2c3e50 40%);
+  height: 100vh;
+  background: url(lightbulb.gif) no-repeat center center fixed;
+  background-size: cover;
 }
 
 .section-left,
@@ -143,12 +154,11 @@ section {
   cursor: pointer;
   border-radius: 3px;
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.8);
-  background: #eaaf00;
-  background-image: -webkit-linear-gradient(#eaaf00 0%, #d78100 100%);
+  background: #bdc3c7;
   font-size: 1.2em;
 }
 .learn-more:hover {
-  background: #eaaf00;
+  background: #2c3e50;
 }
 .learn-more:active {
   box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.8);
@@ -293,3 +303,16 @@ section {
     display: block;
   }
 }
+
+/* .clearfix {
+  height: 60px;
+} */
+
+.navbar-container header {
+  height: 60px;
+  padding-top: 10px;
+}
+
+/* .splash-header {
+  display: flex;
+} */

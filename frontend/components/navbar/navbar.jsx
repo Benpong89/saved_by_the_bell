@@ -12,7 +12,9 @@ class Navbar extends React.Component {
         <header className="clearfix">
           <div className="container">
             <div className="header-left">
-              <h1>Saved By the Bell</h1>
+              <h1>
+                <Link to="/">Saved By the Bell</Link>
+              </h1>
             </div>
             <div className="header-right">
               <label>
@@ -26,22 +28,11 @@ class Navbar extends React.Component {
             </div>
           </div>
         </header>
-        <section className="clearfix">
-          <div className="container">
-            <div className="section-left">
-              <h1 className="section-title">
-                See our After School program volunteers
-              </h1>
-              <h5 className="section-tagline" />
-            </div>
-            <div className="section-right">
-              <button className="learn-more">View all volunteers</button>
-            </div>
-          </div>
-        </section>
       </div>
     );
   }
 }
 
 export default Navbar;
+
+// <button className="learn-more">View all volunteers</button>

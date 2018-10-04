@@ -14,21 +14,22 @@ class SearchBar extends React.Component {
   //     <div>
 
   render() {
-    const lightbulbURL = "YOUR IMAGE URL";
     return (
       <div className="search-bar-container">
         <form id="search-form" onSubmit="#">
-          Category
+          Search by Category
           <input
-            id="amount-input"
-            type="integer"
+            id="category-input"
+            type="text"
             placeholder="ie 'Dance' or 'Art'"
           />
           <br />
-          location
-          <input id="people-input" type="integer" placeholder="Zipcode" />
+          Search by Zipcode
+          <input id="zipcode-input" type="integer" placeholder="Zipcode" />
           <br />
-          <button type="submit">Submit</button>
+          <button id="search-button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );

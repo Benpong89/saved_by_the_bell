@@ -14,8 +14,21 @@ class Splash extends React.Component {
     return (
       <div className="splash-container">
         <NavbarContainer />
-        <SearchBarContainer />
-        <div>Search results below</div>
+        <section className="clearfix">
+          <div className="container">
+            <div className="section-left">
+              <h1 className="section-title">
+                See our After School program volunteers
+              </h1>
+              <h5 className="section-tagline" />
+            </div>
+            <div className="section-right">
+              <Link className="learn-more" to="/main">
+                View all volunteers
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
