@@ -8,7 +8,6 @@ class ProfileForm extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className="search-bar-container">
         <NavbarContainer />
