@@ -18,7 +18,7 @@ class App extends React.Component {
       <div className="root-container">
         <Switch>
           <Route exact path="/" component={Splash} />
-          <AuthRoute exact path="/signin" component={SignInFormContainer} />
+          <AuthRoute exact path="/login" component={SignInFormContainer} />
           <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         </Switch>
       </div>
@@ -28,9 +28,9 @@ class App extends React.Component {
 
 export default App;
 
+// <Route exact path="/" component={Splash} />
 // <Modal />
 // <Switch>
-//   <Route exact path="/" component={Splash} />
 //   <AuthRoute exact path="/signin" component={SignInFormContainer} />
 //   <AuthRoute exact path="/signup" component={SignUpFormContainer} />
 //   <ProtectedRoute exact path="/main" component={MainContainer} />

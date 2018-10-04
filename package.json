@@ -19,6 +19,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.2",
     "babel-preset-env": "^1.7.0",
+    "hyper-transparent": "^1.2.2",
     "lodash": "^4.17.10",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

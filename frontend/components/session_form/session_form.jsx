@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.guestSignin = this.guestSignin.bind(this);
+    // this.guestlogin = this.guestlogin.bind(this);
     this.props.resetErrors();
   }
 
@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // guestSignin(e) {
+  // guestlogin(e) {
   //   e.preventDefault();
   //   const randomUsers = [
   //     { username: "Tony Stark", password: "123456" },
@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <div className="signin-form-container">
+        <div className="login-form-container">
           <header className="splash-header">
             <div className="logo-nav">
               <Link to="/">
@@ -75,11 +75,11 @@ class SessionForm extends React.Component {
           </header>
         </div>
 
-        <form onSubmit={this.handleSubmit} className="signin-form-box">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
           <br />
-          <label className="signin-title">{this.props.formType}</label>
+          <label className="login-title">{this.props.formType}</label>
           <label className="session-errors-list">{this.renderErrors()}</label>
-          <div className="signin-form">
+          <div className="login-form">
             <br />
             <label>
               <input
@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update("username")}
                 placeholder="username goes here"
-                className="signin-input"
+                className="login-input"
               />
             </label>
             <br />
@@ -97,7 +97,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update("password")}
                 placeholder="password goes here"
-                className="signin-input"
+                className="login-input"
               />
             </label>
             <br />
@@ -111,7 +111,7 @@ class SessionForm extends React.Component {
                 "session-submit" +
                 (this.props.formType === "Sign up here!" ? " hidden" : "")
               }
-              onClick={this.guestSignin}
+              onClick={this.guestlogin}
             >
               Be my guest!
             </button>

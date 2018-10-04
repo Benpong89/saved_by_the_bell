@@ -1,0 +1,5 @@
+.search-bar-container {
+  height: 100vh;
+  background: url(lightbulb.gif) no-repeat center center fixed;
+  background-size: cover;
+}

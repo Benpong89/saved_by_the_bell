@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Greeting = ({ currentUser, signout }) => {
   const sessionLinks = () => (
-    <nav className="signin-signup">
-      <Link className="nav-session-link" to="/signin">
-        Sign in
+    <nav className="login-signup">
+      <Link className="nav-session-link" to="/login">
+        Log in
       </Link>
       <Link className="nav-session-link" to="/signup">
         Sign up
