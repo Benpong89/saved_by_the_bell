@@ -41,7 +41,25 @@ class ProfileForm extends React.Component {
   }
 
   render() {
-    const categoriesList = this.props.categories.map((category, idx) => {
+    const list1 = this.props.categories.slice(0, 5);
+    const list2 = this.props.categories.slice(5, 10);
+    const list3 = this.props.categories.slice(10, 15);
+
+    const categoriesList1 = list1.map((category, idx) => {
+      return (
+        <div id="category-form-container">
+          <button key={idx}>{category.category}</button>
+        </div>
+      );
+    });
+    const categoriesList2 = list2.map((category, idx) => {
+      return (
+        <div id="category-form-container">
+          <button key={idx}>{category.category}</button>
+        </div>
+      );
+    });
+    const categoriesList3 = list3.map((category, idx) => {
       return (
         <div id="category-form-container">
           <button key={idx}>{category.category}</button>
@@ -114,9 +132,13 @@ class ProfileForm extends React.Component {
           <div id="profile-form2">
             <img className="profile-img-large" src={window.defaultprofileURL} />
             Upload a profile picture
-            <br />
-            Choose categories
-            <ul id="categories-list">{categoriesList}</ul>
+            <div className="ul-container">
+              <h2>Choose Categories</h2>
+              <ul className="categories-list">{categoriesList1}</ul>
+              <ul className="categories-list">{categoriesList2}</ul>
+              <ul className="categories-list">{categoriesList3}</ul>
+            </div>
+            <button id="publish-button">PUBLISH</button>
           </div>
         </section>
       </div>

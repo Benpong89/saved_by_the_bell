@@ -23,7 +23,7 @@ class Navbar extends React.Component {
                 <Link to="/">Saved By the Bell</Link>
               </h1>
             </div>
-            <div className="header-left">
+            <div id="view-volunteers" className="header-left">
               <Link className="learn-more" to="/main">
                 View all volunteers
               </Link>

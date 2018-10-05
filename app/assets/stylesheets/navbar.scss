@@ -153,11 +153,12 @@ section {
 }
 .learn-more {
   display: inline-flex;
-  padding: 1em 6em;
+  padding: 10px;
   cursor: pointer;
   border-radius: 3px;
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.8);
   background: #bdc3c7;
+  font-size: 16px;
 }
 .learn-more:hover {
   background: #2c3e50;
@@ -297,18 +298,17 @@ section {
   .section-tagline {
     font-size: 1em;
   }
-  .learn-more {
-    display: table;
-    margin: 0 auto;
-  }
+
+  // .learn-more {
+  //   display: table;
+  //   margin: 10px;
+  //   font-size: large;
+  // }
+
   .hidden-desktop {
     display: block;
   }
 }
-
-/* .clearfix {
-  height: 60px;
-} */
 
 .navbar-container header {
   height: 100%;
@@ -326,4 +326,8 @@ section {
 
 .greeting-username {
   text-align: right;
+}
+
+#view-volunteers {
+  text-align: end;
 }
