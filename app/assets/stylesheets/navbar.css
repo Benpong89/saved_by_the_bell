@@ -35,7 +35,7 @@ html {
 header {
   width: 100%;
   height: auto;
-  background: black;
+  background: #4d5d53;
 }
 .header-left,
 .header-right {
@@ -117,7 +117,7 @@ section {
   height: auto;
   background-image: -webkit-linear-gradient(#bdc3c7 0%, #2c3e50 40%);
   height: 100vh;
-  background: url(lightbulb.gif) no-repeat center center fixed;
+  background: url(school_desk.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -144,6 +144,7 @@ section {
   font-size: 3em;
   margin-bottom: 0.3em;
   text-shadow: 0 3px 0px black, 0 4px 0px rgba(150, 150, 150, 0.5);
+  text-align: left;
 }
 .section-tagline {
   font-size: 1em;
@@ -314,6 +315,11 @@ section {
   padding: 10px;
 }
 
-/* .splash-header {
+.nav-session-link {
+  margin: 5px;
+}
+
+.nav-link-box {
   display: flex;
-} */
+  justify-content: flex-end;
+}

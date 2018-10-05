@@ -15,15 +15,20 @@ const Greeting = ({ currentUser, logout }) => {
 
   const personalGreeting = () => (
     <hgroup className="greeting-container">
-      <Link to={`/users/${currentUser.id}`}>Link to user Profile</Link>
       <h2 className="greeting-username">Hi, {currentUser.username}!</h2>
-      <Link className="nav-session-link" to="/" onClick={logout}>
-        Log Out
-      </Link>
-      <br />
-      <Link className="nav-session-link" to="/main">
-        Main page
-      </Link>
+      <div className="nav-link-box">
+        <Link className="nav-session-link" to={`/users/${currentUser.id}`}>
+          Profile
+        </Link>
+        <br />
+        <Link className="nav-session-link" to="/main">
+          Main page
+        </Link>
+        <br />
+        <Link className="nav-session-link" to="/" onClick={logout}>
+          Log Out
+        </Link>
+      </div>
     </hgroup>
   );
 

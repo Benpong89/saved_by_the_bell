@@ -2,7 +2,7 @@
 
 .profile-index-container {
   height: 100vh;
-  background: url(lightbulb.gif) no-repeat center center fixed;
+  background: url(school_desk.jpg) no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,23 @@
 
 .section-left {
   padding-bottom: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.search-input input {
+  text-align: left;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border-style: solid;
+  border: thin solid gray;
+  font-size: 12px;
+  /* width: 100%; */
+}
+
+h2 {
+  font-size: 20px !important;
 }

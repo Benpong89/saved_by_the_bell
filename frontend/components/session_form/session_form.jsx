@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
 
   guestlogin(e) {
     e.preventDefault();
-    const guest = { username: "Tony Stark", password: "123456" };
+    const guest = { username: "benpong89", password: "123456" };
     this.props.processForm(guest);
   }
 
