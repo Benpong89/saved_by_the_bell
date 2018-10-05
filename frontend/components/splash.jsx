@@ -17,9 +17,7 @@ class Splash extends React.Component {
         <section className="clearfix">
           <div className="container">
             <div className="section-left">
-              <h1 className="section-title">
-                See our After School program volunteers
-              </h1>
+              <h1 className="section-title">See our volunteers!</h1>
               <h5 className="section-tagline" />
             </div>
             <div className="section-right">
@@ -27,6 +25,47 @@ class Splash extends React.Component {
                 View all volunteers
               </Link>
             </div>
+          </div>
+          <div className="container">
+            <div className="section-left">
+              <h1 className="section-title">What we do</h1>
+              <h5 className="section-tagline" />
+            </div>
+            <p className="section-right">
+              Saved by the Bell is a free resource for public school teachers
+              and administration seeking volunteers to facilitate After School
+              programs. Public schools often overlook the importance of
+              After-School programming and may not have the resources to recruit
+              volunteers. Our mission is close this gap, by bringing the
+              volunteers to the teachers with Saved By the Bell.
+            </p>
+          </div>
+          <div className="container">
+            <div className="section-left">
+              <h1 className="section-title">How it works</h1>
+              <h5 className="section-tagline" />
+            </div>
+            <p className="section-right">
+              Prospective volunteers can create an account and list their
+              availability, specialties by category, location and other relevant
+              information. Teachers can search through published volunteer
+              profiles by category and/or location, and directly contact the
+              volunteers.
+            </p>
+          </div>
+          <div className="container">
+            <div className="section-left">
+              <h1 className="section-title">How you can help</h1>
+              <h5 className="section-tagline" />
+            </div>
+            <p className="section-right">
+              “Life’s most persistent and urgent question is, What are you doing
+              for others?” — Martin Luther King, Jr. Volunteering can be as easy
+              as proctoring am existing after school program, tutoring a student
+              preparing for the SATs, or teaching a dance class once a week. One
+              hour of your time can make a world of a difference to students in
+              your community.
+            </p>
           </div>
         </section>
       </div>

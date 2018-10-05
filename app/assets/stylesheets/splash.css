@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=K2D");
+
+p {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  font-family: "K2D", sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 10px;
+  width: auto !important;
+}
