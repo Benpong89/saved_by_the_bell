@@ -7,7 +7,7 @@ class Api::ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
-      render :create
+      render :show
     else
       render json: ['invalid profile'], status: 401
     end

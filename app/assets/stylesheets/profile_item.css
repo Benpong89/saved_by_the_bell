@@ -1,13 +1,28 @@
-.search-bar-container {
-  /* height: 100vh;
-  background: url(lightbulb.gif) no-repeat center center fixed;
-  background-size: cover; */
-}
-
 input {
   margin: 10px;
   border-radius: 8px;
   width: 200px;
+  background: white;
+}
+
+#profile-form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-form {
+  align-items: center;
+}
+
+#profile-form-box input {
+}
+
+.profile-img-large {
+  max-width: 160px;
+  max-height: 160px;
+  border-radius: 8px;
+  margin: 15px 5px 5px 5px;
 }
 
 #category-input {
@@ -15,7 +30,6 @@ input {
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
-  background: none;
   border-color: #355c7d;
 }
 
@@ -24,7 +38,6 @@ input {
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
-  background: none;
   border-color: #355c7d;
 }
 
@@ -33,17 +46,19 @@ input {
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
-  background: none;
   border-color: #355c7d;
 }
 
 #description-input {
-  text-align: center;
+  text-align: left;
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
-  background: none;
   border-color: #355c7d;
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 8px;
 }
 
 #email-input {
@@ -51,17 +66,19 @@ input {
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
-  background: none;
   border-color: #355c7d;
 }
 
 #summary-input {
-  text-align: center;
+  text-align: left;
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
-  background: none;
   border-color: #355c7d;
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 8px;
 }
 
 #resume-input {
@@ -69,12 +86,11 @@ input {
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
   padding: 10px;
-  background: none;
   border-color: #355c7d;
 }
 
-#search-button {
-  display: none;
+.profile-form-submit {
+  background: none;
 }
 
 #profile-form {
@@ -82,19 +98,6 @@ input {
   flex-direction: column;
 }
 
-#profile-button {
-  background: none;
-  border: none;
-}
-
 #profile-username {
   color: white;
-}
-
-.search-bar-container input {
-  background: white !important;
-}
-
-.search-bar-container {
-  text-align: center;
 }
