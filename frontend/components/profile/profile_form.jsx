@@ -11,21 +11,23 @@ class ProfileForm extends React.Component {
     return (
       <div className="search-bar-container">
         <NavbarContainer />
-        <form id="profile-form" onSubmit="#">
-          <input id="fullname-input" type="integer" placeholder="Full Name" />
-          <input id="email-input" type="integer" placeholder="Email" />
-          <input id="zipcode-input" type="integer" placeholder="Zipcode" />
-          <input id="summary-input" type="integer" placeholder="Summary" />
-          <input
-            id="description-input"
-            type="integer"
-            placeholder="Description"
-          />
-          <input id="resume-input" type="integer" placeholder="Resume-Link" />
-          <button id="profile-button" type="submit">
-            Submit
-          </button>
-        </form>
+        <section className="clearfix">
+          <form id="profile-form" onSubmit="#">
+            <input id="fullname-input" type="integer" placeholder="Full Name" />
+            <input id="email-input" type="integer" placeholder="Email" />
+            <input id="zipcode-input" type="integer" placeholder="Zipcode" />
+            <input id="summary-input" type="integer" placeholder="Summary" />
+            <input
+              id="description-input"
+              type="integer"
+              placeholder="Description"
+            />
+            <input id="resume-input" type="integer" placeholder="Resume-Link" />
+            <button id="profile-button" type="submit">
+              Submit
+            </button>
+          </form>
+        </section>
       </div>
     );
   }

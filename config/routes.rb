@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resource :session, only: %i[create destroy show]
     resources :profiles
     resources :categories
+    resources :profile_categories
   end
 end

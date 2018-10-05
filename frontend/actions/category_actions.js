@@ -1,6 +1,6 @@
 import * as CategoriesAPIUtil from "../util/categories_api_util";
 export const RECEIVE_CATEGORY = "RECEIVE_CATEGORY";
-export const RECEIVE_ALL_CATEGORIES = "RECEIVE_ALL_CATEGORYIES";
+export const RECEIVE_ALL_CATEGORIES = "RECEIVE_ALL_CATEGORIES";
 export const RECEIVE_CURRENT_CATEGORY = "RECEIVE_CURRENT_CATEGORY";
 
 export const receiveCategory = ({ category }) => ({

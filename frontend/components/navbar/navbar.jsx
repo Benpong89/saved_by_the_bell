@@ -9,6 +9,7 @@ class Navbar extends React.Component {
 
   componentWillMount() {
     this.props.requestAllProfiles();
+    this.props.requestAllCategories();
   }
 
   render() {
