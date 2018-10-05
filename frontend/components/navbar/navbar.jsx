@@ -17,12 +17,18 @@ class Navbar extends React.Component {
       <div className="navbar-container">
         <header className="clearfix">
           <div className="container">
+            <br />
             <div className="header-left">
               <h1>
                 <Link to="/">Saved By the Bell</Link>
               </h1>
             </div>
-            <div className="header-right">
+            <div className="header-left">
+              <Link className="learn-more" to="/main">
+                View all volunteers
+              </Link>
+            </div>
+            <div className="header-left">
               <label>
                 <span className="hidden-desktop" />
               </label>

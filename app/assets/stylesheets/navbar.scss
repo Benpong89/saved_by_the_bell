@@ -117,7 +117,8 @@ section {
   height: auto;
   background-image: -webkit-linear-gradient(#bdc3c7 0%, #2c3e50 40%);
   height: 100vh;
-  background: url(school_desk.jpg) no-repeat center center fixed;
+  // background: url(school_desk.jpg) no-repeat center center fixed;
+  background: image_url("school_desk.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -150,14 +151,12 @@ section {
   font-size: 1em;
 }
 .learn-more {
-  display: table;
-  margin: 3em auto 0;
+  display: inline-flex;
   padding: 1em 6em;
   cursor: pointer;
   border-radius: 3px;
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.8);
   background: #bdc3c7;
-  font-size: 1.2em;
 }
 .learn-more:hover {
   background: #2c3e50;
@@ -322,4 +321,8 @@ section {
 .nav-link-box {
   display: flex;
   justify-content: flex-end;
+}
+
+.greeting-username {
+  text-align: right;
 }

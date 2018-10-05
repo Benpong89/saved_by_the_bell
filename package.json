@@ -4,8 +4,8 @@
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
   "engines": {
-    "node": "8.11.4",
-    "npm": "5.6.0"
+    "node": "8.4.0",
+    "npm": "6.1.0"
   },
   "scripts": {
     "start": "webpack --mode=development --watch",

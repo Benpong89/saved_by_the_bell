@@ -2,7 +2,8 @@
 
 .profile-index-container {
   height: 100vh;
-  background: url(school_desk.jpg) no-repeat center center fixed;
+  // background: url(school_desk.jpg) no-repeat center center fixed;
+  background: image_url("school_desk.jpg") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;

@@ -9,7 +9,7 @@ class ProfileForm extends React.Component {
 
   render() {
     return (
-      <div className="search-bar-container">
+      <div className="splash-container">
         <NavbarContainer />
         <section className="clearfix">
           <form id="profile-form" onSubmit="#">
