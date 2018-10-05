@@ -5,26 +5,6 @@ input {
   background: white;
 }
 
-#profile-form-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#profile-form {
-  align-items: center;
-}
-
-#profile-form-box input {
-}
-
-.profile-img-large {
-  max-width: 160px;
-  max-height: 160px;
-  border-radius: 8px;
-  margin: 15px 5px 5px 5px;
-}
-
 #category-input {
   text-align: center;
   font-family: "Fahkwang", sans-serif;
@@ -87,15 +67,6 @@ input {
   font-size: 14px;
   padding: 10px;
   border-color: #355c7d;
-}
-
-.profile-form-submit {
-  background: none;
-}
-
-#profile-form {
-  display: flex;
-  flex-direction: column;
 }
 
 #profile-username {

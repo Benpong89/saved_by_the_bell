@@ -13,7 +13,7 @@ class Splash extends React.Component {
     return (
       <div className="splash-container">
         <NavbarContainer />
-        <section className="clearfix">
+        <section id="splash-section" className="clearfix">
           <div className="container">
             <div>
               <h1 className="section-title">What we do</h1>

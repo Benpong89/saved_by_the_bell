@@ -28,7 +28,17 @@ Category.create([
                   { category: 'Dance' },
                   { category: 'Art' },
                   { category: 'Tutor' },
-                  { category: 'Sing' },
-                  { category: 'Sports' }
+                  { category: 'Music' },
+                  { category: 'Sports' },
+                  { category: 'Martial Arts' },
+                  { category: 'Cooking' },
+                  { category: 'Photography' },
+                  { category: 'Theater' },
+                  { category: 'Chess' },
+                  { category: 'Community Service' },
+                  { category: 'Writing' },
+                  { category: 'Book Club' },
+                  { category: 'Gardening' },
+                  { category: 'Other' },
 
                 ])

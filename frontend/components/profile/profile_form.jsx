@@ -22,6 +22,15 @@ class ProfileForm extends React.Component {
     e.preventDefault();
     const profile = merge({}, this.state);
     this.props.createProfile(profile);
+    this.setState({
+      fullname: "",
+      email: "",
+      zipcode: "",
+      summary: "",
+      description: "",
+      resumeLink: "",
+      user_id: this.props.currentUser.id
+    });
   }
 
   update(field) {
@@ -35,7 +44,7 @@ class ProfileForm extends React.Component {
     const categoriesList = this.props.categories.map((category, idx) => {
       return (
         <div id="category-form-container">
-          <button key={idx}>{category.category}</button>;
+          <button key={idx}>{category.category}</button>
         </div>
       );
     });
@@ -44,8 +53,16 @@ class ProfileForm extends React.Component {
       <div className="splash-container">
         <NavbarContainer />
         <section className="clearfix">
-          <div id="profile-form-box">
-            <img className="profile-img-large" src={window.defaultprofileURL} />
+          <div id="profile-form-instructions-box">
+            <h1>Welcome! Steps to create a profile</h1>
+            <ul id="profile-form-instructions">
+              <li>Submit the basic information for your profile</li>
+              <li>
+                Pair your profile with categories to make it easier for teachers
+                to find you
+              </li>
+              <li>When you're ready, publish your profile.</li>
+            </ul>
             <form id="profile-form" onSubmit={this.handleSubmit}>
               <input
                 id="fullname-input"
@@ -90,10 +107,16 @@ class ProfileForm extends React.Component {
                 onChange={this.update("description")}
               />
               <button className="profile-form-submit" type="submit">
-                Submit
+                Save as draft
               </button>
             </form>
-            <button className="profile-form-submit">Publish</button>
+          </div>
+          <div id="profile-form2">
+            <img className="profile-img-large" src={window.defaultprofileURL} />
+            Upload a profile picture
+            <br />
+            Choose categories
+            <ul id="categories-list">{categoriesList}</ul>
           </div>
         </section>
       </div>
@@ -102,6 +125,8 @@ class ProfileForm extends React.Component {
 }
 
 export default ProfileForm;
+
+// <Link to={`/users/${currentUser.id}/category`}>Link your Profile to Categories</Link>
 
 // <div>Categories</div>
 // <ul>{categoriesList}</ul>

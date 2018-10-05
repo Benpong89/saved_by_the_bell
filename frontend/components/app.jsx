@@ -35,6 +35,11 @@ class App extends React.Component {
 }
 
 export default App;
+// <ProtectedRoute
+//   exact
+//   path="/users/:userId/category"
+//   component={CategoryFormContainer}
+// />
 
 // <Route exact path="/profile" component={ProfileFormContainer} />
 // <AuthRoute

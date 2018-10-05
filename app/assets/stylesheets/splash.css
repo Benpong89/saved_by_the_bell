@@ -10,3 +10,7 @@ p {
   max-width: 500px;
   /* width: auto !important; */
 }
+
+#splash-section {
+  flex-direction: column !important;
+}
