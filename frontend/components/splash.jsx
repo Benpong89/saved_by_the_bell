@@ -3,7 +3,6 @@ import { Link, Route } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import NavbarContainer from "./navbar/navbar_container";
 import GreetingContainer from "./greeting/greeting_container";
-import SearchBarContainer from "./search_bar/search_bar_container";
 
 class Splash extends React.Component {
   constructor(props) {

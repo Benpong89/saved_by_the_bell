@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ProfileIndexItem from "./profile_index_item";
-import SearchBarContainer from "../search_bar/search_bar_container.jsx";
 import SearchInput, { createFilter } from "react-search-input";
 
 const KEYS_TO_FILTERS = ["fullname", "zipcode"];
