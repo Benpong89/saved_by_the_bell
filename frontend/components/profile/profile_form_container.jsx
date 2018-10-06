@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import ProfileForm from "./profile_form";
-import { createProfile } from "../../actions/profile_actions.js";
+import { createProfile, updateProfile } from "../../actions/profile_actions.js";
 
 const mapStateToProps = ({
   session,
@@ -18,6 +18,7 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => ({
   createProfile: profile => dispatch(createProfile(profile)),
+  updateProfile: profile => dispatch(updateProfile(profile)),
   logout: () => dispatch(logout())
 });
 

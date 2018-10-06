@@ -16,3 +16,17 @@ export const createProfile = profile =>
     url: `api/profiles/`,
     data: { profile }
   });
+
+export const updateProfile = profile => {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/profiles/${profile.id}`,
+    data: { profile }
+  });
+};
+
+export const deleteProfile = id =>
+  $.ajax({
+    method: "DELETE",
+    url: `api/profiles/${id}`
+  });

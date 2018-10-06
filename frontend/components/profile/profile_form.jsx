@@ -7,31 +7,69 @@ class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullname: "",
-      email: "",
-      zipcode: "",
-      summary: "",
-      description: "",
-      resumeLink: "",
-      user_id: this.props.currentUser.id
+      id: this.props.currentUser.profile.id,
+      fullname: this.props.currentUser.profile.fullname,
+      email: this.props.currentUser.profile.email,
+      zipcode: this.props.currentUser.profile.zipcode,
+      summary: this.props.currentUser.profile.summary,
+      description: this.props.currentUser.profile.description,
+      resumeLink: this.props.currentUser.profile.resumeLink,
+      user_id: this.props.currentUser.id,
+      hide_edit: this.props.currentUser.profile ? false : true
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.createProfile = this.createProfile.bind(this);
+    this.updateProfile = this.updateProfile.bind(this);
   }
 
-  handleSubmit(e) {
+  createProfile(e) {
     e.preventDefault();
-    const profile = merge({}, this.state);
+    const profile = {
+      fullname: this.state.fullname,
+      email: this.state.email,
+      zipcode: this.state.zipcode,
+      summary: this.state.summary,
+      description: this.state.description,
+      resumeLink: this.state.resumeLink,
+      user_id: this.props.currentUser.id
+    };
     this.props.createProfile(profile);
     this.setState({
-      fullname: "",
-      email: "",
-      zipcode: "",
-      summary: "",
-      description: "",
-      resumeLink: "",
-      user_id: this.props.currentUser.id
+      id: this.props.currentUser.profile.id,
+      fullname: profile.fullname,
+      email: profile.email,
+      zipcode: profile.zipcode,
+      summary: profile.summary,
+      description: profile.description,
+      resumeLink: profile.resumeLink,
+      user_id: this.props.currentUser.id,
+      hide_edit: false
     });
-    $("#profile-form2").toggleClass("hidden");
+  }
+
+  updateProfile(e) {
+    e.preventDefault();
+    const profile = {
+      id: this.props.currentUser.profile.id,
+      fullname: this.state.fullname,
+      email: this.state.email,
+      zipcode: this.state.zipcode,
+      summary: this.state.summary,
+      description: this.state.description,
+      resumeLink: this.state.resumeLink,
+      user_id: this.props.currentUser.id
+    };
+    this.props.updateProfile(profile);
+    this.setState({
+      id: this.props.currentUser.profile.id,
+      fullname: this.state.fullname,
+      email: this.state.email,
+      zipcode: this.state.zipcode,
+      summary: this.state.summary,
+      description: this.state.description,
+      resumeLink: this.state.resumeLink,
+      user_id: this.props.currentUser.id,
+      hide_edit: false
+    });
   }
 
   update(field) {
@@ -48,14 +86,14 @@ class ProfileForm extends React.Component {
 
     const categoriesList1 = list1.map((category, idx) => {
       return (
-        <div id="category-form-container">
+        <div key={idx} id="category-form-container">
           <button key={idx}>{category.category}</button>
         </div>
       );
     });
     const categoriesList2 = list2.map((category, idx) => {
       return (
-        <div id="category-form-container">
+        <div key={idx} id="category-form-container">
           <button key={idx}>{category.category}</button>
         </div>
       );
@@ -82,7 +120,14 @@ class ProfileForm extends React.Component {
               </li>
               <li>When you're ready, publish your profile.</li>
             </ul>
-            <form id="profile-form" onSubmit={this.handleSubmit}>
+            <form
+              id="profile-form"
+              onSubmit={
+                this.props.currentUser.profile
+                  ? this.updateProfile
+                  : this.createProfile
+              }
+            >
               <input
                 id="fullname-input"
                 type="integer"
@@ -125,12 +170,19 @@ class ProfileForm extends React.Component {
                 value={this.state.description}
                 onChange={this.update("description")}
               />
-              <button className="profile-form-submit" type="submit">
-                Save as draft
+              <button
+                className="profile-form-submit"
+                disabled={!this.state.fullname || !this.state.email}
+                type="submit"
+              >
+                Create Profile!
               </button>
             </form>
           </div>
-          <div id="profile-form2" className="hidden">
+          <div
+            id="profile-form2"
+            className={this.state.hide_edit ? "hidden" : ""}
+          >
             <img className="profile-img-large" src={window.defaultprofileURL} />
             Upload a profile picture
             <div className="ul-container">
