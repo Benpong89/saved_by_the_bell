@@ -15,6 +15,10 @@
   justify-content: center;
 }
 
+#profile-form2.hidden {
+  display: none;
+}
+
 .ul-container {
   margin-top: 50px;
   display: flex;

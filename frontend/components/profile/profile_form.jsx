@@ -31,6 +31,7 @@ class ProfileForm extends React.Component {
       resumeLink: "",
       user_id: this.props.currentUser.id
     });
+    $("#profile-form2").toggleClass("hidden");
   }
 
   update(field) {
@@ -61,7 +62,7 @@ class ProfileForm extends React.Component {
     });
     const categoriesList3 = list3.map((category, idx) => {
       return (
-        <div id="category-form-container">
+        <div key={idx} id="category-form-container">
           <button key={idx}>{category.category}</button>
         </div>
       );
@@ -129,7 +130,7 @@ class ProfileForm extends React.Component {
               </button>
             </form>
           </div>
-          <div id="profile-form2">
+          <div id="profile-form2" className="hidden">
             <img className="profile-img-large" src={window.defaultprofileURL} />
             Upload a profile picture
             <div className="ul-container">
