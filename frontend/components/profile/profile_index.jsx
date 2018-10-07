@@ -32,9 +32,9 @@ class ProfileIndex extends React.Component {
           onChange={this.searchUpdated}
         />
 
-        {profilesList.map(profile => {
+        {profilesList.map((profile, idx) => {
           return (
-            <div className="profile-index-li-container">
+            <div key={idx} className="profile-index-li-container">
               <img className="profile-img" src={window.defaultprofileURL} />
               <li className="profile-index-item">
                 <div>Name: {profile.fullname}</div>

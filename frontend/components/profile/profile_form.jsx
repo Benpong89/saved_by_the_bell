@@ -85,6 +85,17 @@ class ProfileForm extends React.Component {
     });
   }
 
+  createProfileCategory(category_id) {
+    return e => {
+      e.preventDefault();
+      const profileCategory = {
+        profile_id: this.props.currentUser.profile.id,
+        category_id: category_id
+      };
+      this.props.createProfileCategory(profileCategory);
+    };
+  }
+
   update(field) {
     return e =>
       this.setState({
@@ -97,24 +108,30 @@ class ProfileForm extends React.Component {
     const list2 = this.props.categories.slice(5, 10);
     const list3 = this.props.categories.slice(10, 15);
 
-    const categoriesList1 = list1.map((category, idx) => {
+    const categoriesList1 = list1.map((categories, idx) => {
       return (
         <div key={idx} id="category-form-container">
-          <button key={idx}>{category.category}</button>
+          <button onClick={this.createProfileCategory(categories.id)} key={idx}>
+            {categories.category}
+          </button>
         </div>
       );
     });
-    const categoriesList2 = list2.map((category, idx) => {
+    const categoriesList2 = list2.map((categories, idx) => {
       return (
         <div key={idx} id="category-form-container">
-          <button key={idx}>{category.category}</button>
+          <button onClick={this.createProfileCategory(categories.id)} key={idx}>
+            {categories.category}
+          </button>
         </div>
       );
     });
-    const categoriesList3 = list3.map((category, idx) => {
+    const categoriesList3 = list3.map((categories, idx) => {
       return (
         <div key={idx} id="category-form-container">
-          <button key={idx}>{category.category}</button>
+          <button onClick={this.createProfileCategory(categories.id)} key={idx}>
+            {categories.category}
+          </button>
         </div>
       );
     });
@@ -188,7 +205,7 @@ class ProfileForm extends React.Component {
                 disabled={!this.state.fullname || !this.state.email}
                 type="submit"
               >
-                Create Profile!
+                Save information
               </button>
             </form>
           </div>
