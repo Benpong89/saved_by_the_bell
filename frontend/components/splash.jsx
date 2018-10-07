@@ -20,11 +20,11 @@ class Splash extends React.Component {
             </div>
             <p>
               Saved by the Bell is a free resource for public school teachers
-              seeking volunteers to facilitate After School programs. Public
-              schools often overlook the importance of After-School programming
+              seeking volunteers to facilitate after school programs. Public
+              schools often overlook the importance of after school programs,
               and may not have the resources to recruit volunteers. Our mission
-              is close this gap, by bringing the volunteers to the teachers with
-              Saved By the Bell.
+              is to close this gap by bringing the volunteers to the teachers
+              with Saved By the Bell.
             </p>
           </div>
 
@@ -33,11 +33,10 @@ class Splash extends React.Component {
               <h1 className="section-title">How it works</h1>
             </div>
             <p>
-              Prospective volunteers can create an account and list their
+              Prospective volunteers can create a profile and list their
               availability, specialties by category, location and other relevant
               information. Teachers can search through published volunteer
-              profiles by category, location, or name and directly contact the
-              volunteers.
+              profiles and directly contact the volunteers.
             </p>
           </div>
 
@@ -46,12 +45,12 @@ class Splash extends React.Component {
               <h1 className="section-title">How you can help</h1>
             </div>
             <p>
-              “Life’s most persistent and urgent question is, What are you doing
-              for others?” — Martin Luther King, Jr. Volunteering can be as easy
-              as proctoring an existing after school program for one day,
-              tutoring a student preparing for the SATs, or teaching a dance
-              class once a week. One hour of your time can make a world of a
-              difference to students in your community.
+              “Life’s most persistent and urgent question is, <br /> What are
+              you doing for others?” — Martin Luther King, Jr.
+              <br /> <br />Volunteering can be as easy as facilitating an
+              existing after school program for one afternoon, tutoring a
+              student preparing for the SATs, or teaching a dance class once a
+              week.
             </p>
           </div>
         </section>
