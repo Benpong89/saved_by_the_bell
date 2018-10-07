@@ -29,6 +29,7 @@ class ProfileForm extends React.Component {
         description: "",
         resumeLink: "",
         user_id: "",
+        published: false,
         hide_edit: true
       };
     }
@@ -97,6 +98,8 @@ class ProfileForm extends React.Component {
       id: this.props.currentUser.profile.id,
       published: !this.props.currentUser.profile.published
     });
+    const published = !this.state.published;
+    this.setState({ published });
   }
 
   createProfileCategory(category_id) {
@@ -267,7 +270,9 @@ class ProfileForm extends React.Component {
                 disabled={!this.state.fullname || !this.state.email}
                 type="submit"
               >
-                Save information
+                {this.props.currentUser.profile
+                  ? "Update your profile"
+                  : "Create a Profile"}
               </button>
             </form>
           </div>
@@ -282,8 +287,7 @@ class ProfileForm extends React.Component {
               <ul className="categories-list">{categoriesList3}</ul>
             </div>
             <button onClick={this.publishProfile} id="publish-button">
-              {this.props.currentUser.profile &&
-              this.props.currentUser.profile.published
+              {this.props.currentUser.profile && this.state.published
                 ? "UNPUBLISH"
                 : "PUBLISH"}
             </button>
