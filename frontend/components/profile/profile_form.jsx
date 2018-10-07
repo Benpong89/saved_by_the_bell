@@ -16,6 +16,7 @@ class ProfileForm extends React.Component {
         description: this.props.currentUser.profile.description,
         resumeLink: this.props.currentUser.profile.resumeLink,
         user_id: this.props.currentUser.id,
+        published: this.props.currentUser.profile.published,
         hide_edit: false
       };
     } else {
@@ -35,7 +36,7 @@ class ProfileForm extends React.Component {
     this.updateProfile = this.updateProfile.bind(this);
     this.createProfileCategory = this.createProfileCategory.bind(this);
     this.deleteProfileCategory = this.deleteProfileCategory.bind(this);
-    this.requestCurrentUser = this.requestCurrentUser.bind(this);
+    this.publishProfile = this.publishProfile.bind(this);
   }
 
   createProfile(e) {
@@ -49,7 +50,9 @@ class ProfileForm extends React.Component {
       resumeLink: this.state.resumeLink,
       user_id: this.props.currentUser.id
     };
-    this.props.createProfile(profile).then(this.requestCurrentUser());
+    this.props
+      .createProfile(profile)
+      .then(this.props.requestUser(this.props.currentUser.id));
     this.setState({
       fullname: profile.fullname,
       email: profile.email,
@@ -88,6 +91,14 @@ class ProfileForm extends React.Component {
     });
   }
 
+  publishProfile(e) {
+    e.preventDefault();
+    this.props.updateProfile({
+      id: this.props.currentUser.profile.id,
+      published: !this.props.currentUser.profile.published
+    });
+  }
+
   createProfileCategory(category_id) {
     return e => {
       e.preventDefault();
@@ -116,10 +127,6 @@ class ProfileForm extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
-  }
-
-  requestCurrentUser() {
-    this.props.requestUser(this.props.currentUser.id);
   }
 
   render() {
@@ -268,15 +275,18 @@ class ProfileForm extends React.Component {
             id="profile-form2"
             className={this.state.hide_edit ? "hidden" : ""}
           >
-            <img className="profile-img-large" src={window.defaultprofileURL} />
-            Upload a profile picture
             <div className="ul-container">
               <h2>Choose Categories</h2>
               <ul className="categories-list">{categoriesList1}</ul>
               <ul className="categories-list">{categoriesList2}</ul>
               <ul className="categories-list">{categoriesList3}</ul>
             </div>
-            <button id="publish-button">PUBLISH</button>
+            <button onClick={this.publishProfile} id="publish-button">
+              {this.props.currentUser.profile &&
+              this.props.currentUser.profile.published
+                ? "UNPUBLISH"
+                : "PUBLISH"}
+            </button>
           </div>
         </section>
       </div>
@@ -285,6 +295,9 @@ class ProfileForm extends React.Component {
 }
 
 export default ProfileForm;
+
+// <img className="profile-img-large" src={window.defaultprofileURL} />
+// Upload a profile picture
 
 // <Link to={`/users/${currentUser.id}/category`}>Link your Profile to Categories</Link>
 
