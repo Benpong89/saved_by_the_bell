@@ -35,6 +35,7 @@ class ProfileForm extends React.Component {
     this.updateProfile = this.updateProfile.bind(this);
     this.createProfileCategory = this.createProfileCategory.bind(this);
     this.deleteProfileCategory = this.deleteProfileCategory.bind(this);
+    this.requestCurrentUser = this.requestCurrentUser.bind(this);
   }
 
   createProfile(e) {
@@ -48,7 +49,7 @@ class ProfileForm extends React.Component {
       resumeLink: this.state.resumeLink,
       user_id: this.props.currentUser.id
     };
-    this.props.createProfile(profile);
+    this.props.createProfile(profile).then(this.requestCurrentUser());
     this.setState({
       fullname: profile.fullname,
       email: profile.email,
@@ -117,25 +118,27 @@ class ProfileForm extends React.Component {
       });
   }
 
-  //need a conditional for the button to change from createProfileCategory to Delete Propfile Category.
-  // all of the profcateg values do not include a pair that matches the currentprofile and categories.id then its create
-  // else delete and pass in categories.id
+  requestCurrentUser() {
+    this.props.requestUser(this.props.currentUser.id);
+  }
 
   render() {
     const list1 = this.props.categories.slice(0, 5);
     const list2 = this.props.categories.slice(5, 10);
     const list3 = this.props.categories.slice(10, 15);
 
-    const current_profile_categories_ids = this.props.profile_categories
-      .filter(obj => obj.profile_id === this.props.currentUser.profile.id)
-      .map(categories => categories.category_id);
-
     const categoriesList1 = list1.map((categories, idx) => {
       return (
         <div key={idx} id="category-form-container">
           <button
             onClick={
-              current_profile_categories_ids.includes(categories.id)
+              this.props.currentUser.profile &&
+              this.props.profile_categories
+                .filter(
+                  obj => obj.profile_id === this.props.currentUser.profile.id
+                )
+                .map(categories => categories.category_id)
+                .includes(categories.id)
                 ? this.deleteProfileCategory(categories.id)
                 : this.createProfileCategory(categories.id)
             }
@@ -150,7 +153,13 @@ class ProfileForm extends React.Component {
         <div key={idx} id="category-form-container">
           <button
             onClick={
-              current_profile_categories_ids.includes(categories.id)
+              this.props.currentUser.profile &&
+              this.props.profile_categories
+                .filter(
+                  obj => obj.profile_id === this.props.currentUser.profile.id
+                )
+                .map(categories => categories.category_id)
+                .includes(categories.id)
                 ? this.deleteProfileCategory(categories.id)
                 : this.createProfileCategory(categories.id)
             }
@@ -165,7 +174,13 @@ class ProfileForm extends React.Component {
         <div key={idx} id="category-form-container">
           <button
             onClick={
-              current_profile_categories_ids.includes(categories.id)
+              this.props.currentUser.profile &&
+              this.props.profile_categories
+                .filter(
+                  obj => obj.profile_id === this.props.currentUser.profile.id
+                )
+                .map(categories => categories.category_id)
+                .includes(categories.id)
                 ? this.deleteProfileCategory(categories.id)
                 : this.createProfileCategory(categories.id)
             }

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ProfileForm from "./profile_form";
 import { createProfile, updateProfile } from "../../actions/profile_actions.js";
+import { requestUser } from "../../actions/session_actions.js";
 import {
   createProfileCategory,
   deleteProfileCategory
@@ -22,6 +23,7 @@ const mapStateToProps = ({
 };
 
 const mapDispatchToProps = dispatch => ({
+  requestUser: id => dispatch(requestUser(id)),
   createProfile: profile => dispatch(createProfile(profile)),
   updateProfile: profile => dispatch(updateProfile(profile)),
   createProfileCategory: profile_category =>

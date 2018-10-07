@@ -17,7 +17,7 @@
 #
 
 class Profile < ApplicationRecord
-  validates :fullname, :email, :zipcode, :summary, :description, presence: true
+  validates :fullname, :email, presence: true
   validates_uniqueness_of :user_id, :allow_blank => true, :allow_nil => true
 
   # belongs_to :user

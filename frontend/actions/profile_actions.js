@@ -24,9 +24,9 @@ export const removeProfile = id => ({
 });
 
 export const createProfile = profile => dispatch =>
-  ProfilesAPIUtil.createProfile(profile).then(profile => {
-    dispatch(receiveProfile(profile));
-  });
+  ProfilesAPIUtil.createProfile(profile).then(profile =>
+    dispatch(receiveProfile(profile))
+  );
 
 export const requestProfile = profile => dispatch =>
   ProfilesAPIUtil.fetchProfile(profile).then(profile =>
