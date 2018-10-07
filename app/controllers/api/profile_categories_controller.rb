@@ -6,7 +6,7 @@ class Api::ProfileCategoriesController < ApplicationController
   def create
     @profile_category = ProfileCategory.new(profile_category_params)
     if @profile_category.save
-      render :create
+      render :show
     else
       render json: ['invalid profile_category'], status: 401
     end
