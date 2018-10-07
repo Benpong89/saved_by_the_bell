@@ -10,11 +10,13 @@ const mapStateToProps = ({
   session,
   entities: { users },
   entities: { profiles },
-  entities: { categories }
+  entities: { categories },
+  entities: { profile_categories }
 }) => {
   return {
     profiles: Object.values(profiles),
     categories: Object.values(categories),
+    profile_categories: Object.values(profile_categories),
     currentUser: users[session.id]
   };
 };

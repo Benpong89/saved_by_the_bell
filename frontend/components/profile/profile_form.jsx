@@ -33,6 +33,8 @@ class ProfileForm extends React.Component {
     }
     this.createProfile = this.createProfile.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
+    this.createProfileCategory = this.createProfileCategory.bind(this);
+    this.deleteProfileCategory = this.deleteProfileCategory.bind(this);
   }
 
   createProfile(e) {
@@ -96,6 +98,18 @@ class ProfileForm extends React.Component {
     };
   }
 
+  deleteProfileCategory(category_id) {
+    return e => {
+      e.preventDefault();
+      const profile_category_id = this.props.profile_categories.find(
+        obj =>
+          obj.profile_id === this.props.currentUser.profile.id &&
+          obj.category_id === category_id
+      ).id;
+      this.props.deleteProfileCategory(profile_category_id);
+    };
+  }
+
   update(field) {
     return e =>
       this.setState({
@@ -103,15 +117,29 @@ class ProfileForm extends React.Component {
       });
   }
 
+  //need a conditional for the button to change from createProfileCategory to Delete Propfile Category.
+  // all of the profcateg values do not include a pair that matches the currentprofile and categories.id then its create
+  // else delete and pass in categories.id
+
   render() {
     const list1 = this.props.categories.slice(0, 5);
     const list2 = this.props.categories.slice(5, 10);
     const list3 = this.props.categories.slice(10, 15);
 
+    const current_profile_categories_ids = this.props.profile_categories
+      .filter(obj => obj.profile_id === this.props.currentUser.profile.id)
+      .map(categories => categories.category_id);
+
     const categoriesList1 = list1.map((categories, idx) => {
       return (
         <div key={idx} id="category-form-container">
-          <button onClick={this.createProfileCategory(categories.id)} key={idx}>
+          <button
+            onClick={
+              current_profile_categories_ids.includes(categories.id)
+                ? this.deleteProfileCategory(categories.id)
+                : this.createProfileCategory(categories.id)
+            }
+          >
             {categories.category}
           </button>
         </div>
@@ -120,7 +148,13 @@ class ProfileForm extends React.Component {
     const categoriesList2 = list2.map((categories, idx) => {
       return (
         <div key={idx} id="category-form-container">
-          <button onClick={this.createProfileCategory(categories.id)} key={idx}>
+          <button
+            onClick={
+              current_profile_categories_ids.includes(categories.id)
+                ? this.deleteProfileCategory(categories.id)
+                : this.createProfileCategory(categories.id)
+            }
+          >
             {categories.category}
           </button>
         </div>
@@ -129,7 +163,13 @@ class ProfileForm extends React.Component {
     const categoriesList3 = list3.map((categories, idx) => {
       return (
         <div key={idx} id="category-form-container">
-          <button onClick={this.createProfileCategory(categories.id)} key={idx}>
+          <button
+            onClick={
+              current_profile_categories_ids.includes(categories.id)
+                ? this.deleteProfileCategory(categories.id)
+                : this.createProfileCategory(categories.id)
+            }
+          >
             {categories.category}
           </button>
         </div>

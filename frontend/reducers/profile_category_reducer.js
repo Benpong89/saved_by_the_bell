@@ -9,7 +9,7 @@ const profile_categoriesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_PROFILE_CATEGORY:
-      const newState = merge({}, state);
+      let newState = merge({}, state);
       newState[action.profile_category.id] = action.profile_category;
       return newState;
     case RECEIVE_ALL_PROFILE_CATEGORIES:
