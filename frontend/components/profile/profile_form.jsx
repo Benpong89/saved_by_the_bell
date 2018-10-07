@@ -6,17 +6,31 @@ import { merge } from "lodash";
 class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      id: this.props.currentUser.profile.id,
-      fullname: this.props.currentUser.profile.fullname,
-      email: this.props.currentUser.profile.email,
-      zipcode: this.props.currentUser.profile.zipcode,
-      summary: this.props.currentUser.profile.summary,
-      description: this.props.currentUser.profile.description,
-      resumeLink: this.props.currentUser.profile.resumeLink,
-      user_id: this.props.currentUser.id,
-      hide_edit: this.props.currentUser.profile ? false : true
-    };
+    if (this.props.currentUser.profile) {
+      this.state = {
+        id: this.props.currentUser.profile.id,
+        fullname: this.props.currentUser.profile.fullname,
+        email: this.props.currentUser.profile.email,
+        zipcode: this.props.currentUser.profile.zipcode,
+        summary: this.props.currentUser.profile.summary,
+        description: this.props.currentUser.profile.description,
+        resumeLink: this.props.currentUser.profile.resumeLink,
+        user_id: this.props.currentUser.id,
+        hide_edit: false
+      };
+    } else {
+      this.state = {
+        id: "",
+        fullname: "",
+        email: "",
+        zipcode: "",
+        summary: "",
+        description: "",
+        resumeLink: "",
+        user_id: "",
+        hide_edit: true
+      };
+    }
     this.createProfile = this.createProfile.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
   }
@@ -34,7 +48,6 @@ class ProfileForm extends React.Component {
     };
     this.props.createProfile(profile);
     this.setState({
-      id: this.props.currentUser.profile.id,
       fullname: profile.fullname,
       email: profile.email,
       zipcode: profile.zipcode,
