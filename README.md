@@ -1,4 +1,4 @@
-![alt text](https://github.com/Benpong89/slang/blob/master/app/assets/images/port05.png)
+![alt text](https://github.com/Benpong89/saved_by_the_bell/blob/master/app/assets/images/port05.png)
 
 [Live demo!](https://savedbythebell.benpong.com)
 
