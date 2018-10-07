@@ -16,6 +16,13 @@ class Api::ProfileCategoriesController < ApplicationController
     @profile_category = ProfileCategory.find(params[:id])
   end
 
+  def destroy
+    @profile_category = ProfileCategory.find(params[:id])
+    @profile_category.destroy
+    render :show
+  end
+
+
   def profile_category_params
     params.require(:profile_category).permit(:profile_id, :category_id)
   end
