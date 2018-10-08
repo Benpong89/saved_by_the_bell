@@ -28,8 +28,8 @@ export const createProfile = profile => dispatch =>
     dispatch(receiveProfile(profile))
   );
 
-export const requestProfile = profile => dispatch =>
-  ProfilesAPIUtil.fetchProfile(profile).then(profile =>
+export const requestProfile = id => dispatch =>
+  ProfilesAPIUtil.fetchProfile(id).then(profile =>
     dispatch(receiveProfile(profile))
   );
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProfileIndexItem from "./profile_index_item";
 import SearchInput, { createFilter } from "react-search-input";
 
 const KEYS_TO_FILTERS = ["fullname", "zipcode"];
@@ -23,6 +22,7 @@ class ProfileIndex extends React.Component {
     const profilesList = this.props.profiles.filter(
       createFilter(this.state.searchTerm, KEYS_TO_FILTERS)
     );
+
     return (
       <section className="profile-index-container">
         <h2 className="section-title">Search here for volunteers!</h2>
@@ -36,11 +36,23 @@ class ProfileIndex extends React.Component {
           return (
             <div key={idx} className="profile-index-li-container">
               <img className="profile-img" src={window.defaultprofileURL} />
+
               <li className="profile-index-item">
+                <Link
+                  className="nav-session-link"
+                  to={`/profiles/${profile.id}`}
+                >
+                  View Profile
+                </Link>
                 <div>Name: {profile.fullname}</div>
                 <div> Summary: {profile.summary}</div>
                 <div>ZIP Code: {profile.zipcode}</div>
-                <div>Categories: </div>
+                <div>
+                  Categories:
+                  {profile.categories.map(category =>
+                    category.category.concat(", ")
+                  )}
+                </div>
               </li>
             </div>
           );

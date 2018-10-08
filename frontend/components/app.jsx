@@ -8,7 +8,7 @@ import SignInFormContainer from "./session_form/signin_form_container";
 import MainContainer from "./main/main_container";
 import Splash from "./splash";
 import ProfileFormContainer from "./profile/profile_form_container";
-// import ProfileShowContainer from "./profile/profile_show_container";
+import ProfileShowContainer from "./profile/profile_show_container";
 
 class App extends React.Component {
   constructor(props) {
@@ -27,6 +27,11 @@ class App extends React.Component {
             exact
             path="/users/:userId"
             component={ProfileFormContainer}
+          />
+          <Route
+            exact
+            path="/profiles/:profileId"
+            component={ProfileShowContainer}
           />
         </Switch>
       </div>
