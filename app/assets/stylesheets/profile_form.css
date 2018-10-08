@@ -98,3 +98,78 @@
 .categories-list {
   display: flex;
 }
+
+input {
+  margin: 10px;
+  border-radius: 8px;
+  width: 200px;
+  background: white;
+}
+
+#category-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 13px;
+  padding: 10px;
+  border-color: #355c7d;
+}
+
+#zipcode-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  border-color: #355c7d;
+}
+
+#fullname-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  border-color: #355c7d;
+}
+
+#description-input {
+  text-align: left;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  border-color: #355c7d;
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+#email-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  border-color: #355c7d;
+}
+
+#summary-input {
+  text-align: left;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  border-color: #355c7d;
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+#resume-input {
+  text-align: center;
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  border-color: #355c7d;
+}
+
+#profile-username {
+  color: white;
+}

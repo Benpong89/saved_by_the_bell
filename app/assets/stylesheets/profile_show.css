@@ -1,0 +1,11 @@
+.profile-show-ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin: 5px;
+}
+
+.profile-show-ul li {
+  padding: 5px;
+  margin: 5px;
+}

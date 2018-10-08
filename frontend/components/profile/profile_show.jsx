@@ -14,15 +14,32 @@ class ProfileShow extends React.Component {
   render() {
     if (this.props.profiles.length === 0) return null;
 
-    const currentProfile = this.props.profiles.find(
-      profile => profile.user_id === this.props.currentUser.id
+    const currentProfile = this.props.profiles.find(profile =>
+      parseInt(this.props.match.params.profileId)
     );
 
     return (
       <div className="splash-container">
         <NavbarContainer />
         <section className="clearfix">
-          <ul>Current Profile info</ul>
+          <ul className="profile-show-ul">
+            <img className="profile-img-large" src={window.defaultprofileURL} />
+            <li>Fullname: {currentProfile.fullname}</li>
+            <li>Email: {currentProfile.email}</li>
+            <li>Zipcode: {currentProfile.zipcode}</li>
+            <li>Summary: {currentProfile.summary}</li>
+            <li>Description: {currentProfile.description}</li>
+            <li>resumeLink: {currentProfile.resumeLink}</li>
+          </ul>
+          <div className="profile-show-ul">
+            <h1>{currentProfile.fullname}s Profile </h1>
+            <h2>
+              Do you think {currentProfile.fullname} will be a great fit for
+              your after school program? <br />
+              Simply email your prospective volunteer directly at the contact
+              provided.
+            </h2>
+          </div>
         </section>
       </div>
     );
@@ -30,11 +47,3 @@ class ProfileShow extends React.Component {
 }
 
 export default ProfileShow;
-
-// const profileItems = Object.keys(currentProfile).map(prop => {
-//   return (
-//     <li>
-//       {currentProfile[prop]}
-//     </li>
-//   );
-// });
