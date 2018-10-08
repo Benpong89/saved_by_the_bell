@@ -17,7 +17,8 @@ class ProfileForm extends React.Component {
         resumeLink: this.props.currentUser.profile.resumeLink,
         user_id: this.props.currentUser.id,
         published: this.props.currentUser.profile.published,
-        hide_edit: false
+        hide_edit: false,
+        created: true
       };
     } else {
       this.state = {
@@ -30,6 +31,7 @@ class ProfileForm extends React.Component {
         resumeLink: "",
         user_id: "",
         published: false,
+        created: false,
         hide_edit: true
       };
     }
@@ -62,7 +64,8 @@ class ProfileForm extends React.Component {
       description: profile.description,
       resumeLink: profile.resumeLink,
       user_id: this.props.currentUser.id,
-      hide_edit: false
+      hide_edit: false,
+      created: true
     });
   }
 
@@ -88,7 +91,8 @@ class ProfileForm extends React.Component {
       description: this.state.description,
       resumeLink: this.state.resumeLink,
       user_id: this.props.currentUser.id,
-      hide_edit: false
+      hide_edit: false,
+      created: true
     });
   }
 
@@ -270,7 +274,7 @@ class ProfileForm extends React.Component {
                 disabled={!this.state.fullname || !this.state.email}
                 type="submit"
               >
-                {this.props.currentUser.profile
+                {this.state.created
                   ? "Update your profile"
                   : "Create a Profile"}
               </button>
