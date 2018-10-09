@@ -2,7 +2,10 @@ const path = require("path");
 
 module.exports = {
   context: __dirname,
-  entry: path.join(__dirname, "frontend", "savedByTheBell.jsx"),
+  entry: [
+    "regenerator-runtime/runtime",
+    path.join(__dirname, "frontend", "savedByTheBell.jsx")
+  ],
   output: {
     path: path.join(__dirname, "app", "assets", "javascripts"),
     filename: "bundle.js"

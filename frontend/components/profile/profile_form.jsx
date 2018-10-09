@@ -42,6 +42,12 @@ class ProfileForm extends React.Component {
     this.publishProfile = this.publishProfile.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.currentUser.profile) {
+      this.props.requestProfile(this.props.currentUser.profile.id);
+    } else return null;
+  }
+
   createProfile(e) {
     e.preventDefault();
     const profile = {
@@ -107,29 +113,27 @@ class ProfileForm extends React.Component {
   }
 
   createProfileCategory(category_id) {
-    return e => {
+    return async e => {
       e.preventDefault();
       const profileCategory = {
         profile_id: this.props.currentUser.profile.id,
         category_id: category_id
       };
-      this.props
-        .createProfileCategory(profileCategory)
-        .then(this.props.requestProfile(this.props.currentUser.profile.id));
+      await this.props.createProfileCategory(profileCategory);
+      this.props.requestProfile(this.props.currentUser.profile.id);
     };
   }
 
   deleteProfileCategory(category_id) {
-    return e => {
+    return async e => {
       e.preventDefault();
       const profile_category_id = this.props.profile_categories.find(
         obj =>
           obj.profile_id === this.props.currentUser.profile.id &&
           obj.category_id === category_id
       ).id;
-      this.props
-        .deleteProfileCategory(profile_category_id)
-        .then(this.props.requestProfile(this.props.currentUser.profile.id));
+      await this.props.deleteProfileCategory(profile_category_id);
+      this.props.requestProfile(this.props.currentUser.profile.id);
     };
   }
 
@@ -141,55 +145,22 @@ class ProfileForm extends React.Component {
   }
 
   render() {
-    const list1 = this.props.categories.slice(0, 5);
-    const list2 = this.props.categories.slice(5, 10);
-    const list3 = this.props.categories.slice(10, 15);
-
-    const categoriesList1 = list1.map((categories, idx) => {
+    const categoriesList = this.props.categories.map((categories, idx) => {
       return (
-        <div key={idx} id="category-form-container">
-          <button
-            onClick={
-              this.props.currentUser.profile &&
-              this.props.profile_categories
-                .filter(
-                  obj => obj.profile_id === this.props.currentUser.profile.id
-                )
-                .map(categories => categories.category_id)
-                .includes(categories.id)
-                ? this.deleteProfileCategory(categories.id)
-                : this.createProfileCategory(categories.id)
-            }
-          >
-            {categories.category}
-          </button>
-        </div>
-      );
-    });
-    const categoriesList2 = list2.map((categories, idx) => {
-      return (
-        <div key={idx} id="category-form-container">
-          <button
-            onClick={
-              this.props.currentUser.profile &&
-              this.props.profile_categories
-                .filter(
-                  obj => obj.profile_id === this.props.currentUser.profile.id
-                )
-                .map(categories => categories.category_id)
-                .includes(categories.id)
-                ? this.deleteProfileCategory(categories.id)
-                : this.createProfileCategory(categories.id)
-            }
-          >
-            {categories.category}
-          </button>
-        </div>
-      );
-    });
-    const categoriesList3 = list3.map((categories, idx) => {
-      return (
-        <div key={idx} id="category-form-container">
+        <div
+          key={idx}
+          id={
+            this.props.currentUser.profile &&
+            this.props.profile_categories
+              .filter(
+                obj => obj.profile_id === this.props.currentUser.profile.id
+              )
+              .map(categories => categories.category_id)
+              .includes(categories.id)
+              ? "category-form-container-gray"
+              : "category-form-container"
+          }
+        >
           <button
             onClick={
               this.props.currentUser.profile &&
@@ -293,9 +264,7 @@ class ProfileForm extends React.Component {
                 Link your profile with after school program categories <br />{" "}
                 you would like to facilitate to help teachers find you!
               </h2>
-              <ul className="categories-list">{categoriesList1}</ul>
-              <ul className="categories-list">{categoriesList2}</ul>
-              <ul className="categories-list">{categoriesList3}</ul>
+              <ul className="categories-list">{categoriesList}</ul>
             </div>
             <button onClick={this.publishProfile} id="publish-button">
               {this.props.currentUser.profile && this.state.published

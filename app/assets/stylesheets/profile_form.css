@@ -56,6 +56,12 @@
   border-radius: 8px;
 }
 
+#category-form-container-gray {
+  background: rgba(0, 255, 0, 0.5);
+  margin: 10px;
+  border-radius: 8px;
+}
+
 #category-form-container button {
   font-size: 16px;
   background: none;
@@ -64,6 +70,17 @@
 }
 
 #category-form-container button:hover {
+  cursor: pointer;
+}
+
+#category-form-container-gray button {
+  font-size: 16px;
+  background: none;
+  width: 120px;
+  padding: 10px;
+}
+
+#category-form-container-gray button:hover {
   cursor: pointer;
 }
 
@@ -106,6 +123,8 @@
 
 .categories-list {
   display: flex;
+  flex-wrap: wrap;
+  width: 750px;
 }
 
 input {
