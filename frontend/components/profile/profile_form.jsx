@@ -101,11 +101,11 @@ class ProfileForm extends React.Component {
     });
   }
 
-  publishProfile(e) {
+  async publishProfile(e) {
     e.preventDefault();
-    this.props.updateProfile({
+    await this.props.updateProfile({
       id: this.props.currentUser.profile.id,
-      published: !this.props.currentUser.profile.published
+      published: !this.state.published
     });
     const published = !this.state.published;
     this.setState({ published });
@@ -266,9 +266,7 @@ class ProfileForm extends React.Component {
               <ul className="categories-list">{categoriesList}</ul>
             </div>
             <button onClick={this.publishProfile} id="publish-button">
-              {this.props.currentUser.profile && this.state.published
-                ? "UNPUBLISH"
-                : "PUBLISH"}
+              {this.state.published ? "UNPUBLISH" : "PUBLISH"}
             </button>
           </div>
         </section>
@@ -283,17 +281,3 @@ export default ProfileForm;
 // Upload a profile picture
 
 // <Link to={`/users/${currentUser.id}/category`}>Link your Profile to Categories</Link>
-
-// <div>Categories</div>
-// <ul>{categoriesList}</ul>
-
-// Category
-// <input
-//   id="amount-input"
-//   type="integer"
-//   placeholder="ie 'Dance' or 'Art'"
-// />
-// <br />
-// location
-// <input id="people-input" type="integer" placeholder="Zipcode" />
-// <br />
