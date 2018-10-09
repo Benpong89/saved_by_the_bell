@@ -12,6 +12,7 @@
 
 .profile-index-ul-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .profile-index-li-container {
@@ -19,6 +20,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   margin: 10px;
   font-family: "K2D", sans-serif;
+  width: 300px;
 }
 
 .profile-img {

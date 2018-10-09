@@ -14,8 +14,8 @@ class ProfileShow extends React.Component {
   render() {
     if (this.props.profiles.length === 0) return null;
 
-    const currentProfile = this.props.profiles.find(profile =>
-      parseInt(this.props.match.params.profileId)
+    const currentProfile = this.props.profiles.find(
+      profile => profile.id === parseInt(this.props.match.params.profileId)
     );
 
     return (
@@ -34,10 +34,9 @@ class ProfileShow extends React.Component {
           <div className="profile-show-ul">
             <h1>{currentProfile.fullname}s Profile </h1>
             <h2>
-              Do you think {currentProfile.fullname} will be a great fit for
-              your after school program? <br />
-              Simply email your prospective volunteer directly at the contact
-              provided.
+              Do I look like a good fit for your after school program?
+              <br />
+              Send me an email today!
             </h2>
           </div>
         </section>
