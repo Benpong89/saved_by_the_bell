@@ -48,7 +48,7 @@ class ProfileForm extends React.Component {
     } else return null;
   }
 
-  createProfile(e) {
+  async createProfile(e) {
     e.preventDefault();
     const profile = {
       fullname: this.state.fullname,
@@ -59,9 +59,8 @@ class ProfileForm extends React.Component {
       resumeLink: this.state.resumeLink,
       user_id: this.props.currentUser.id
     };
-    this.props
-      .createProfile(profile)
-      .then(this.props.requestUser(this.props.currentUser.id));
+    await this.props.createProfile(profile);
+    this.props.requestUser(this.props.currentUser.id);
     this.setState({
       fullname: profile.fullname,
       email: profile.email,
