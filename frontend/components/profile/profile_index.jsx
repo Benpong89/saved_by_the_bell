@@ -31,32 +31,33 @@ class ProfileIndex extends React.Component {
           className="search-input"
           onChange={this.searchUpdated}
         />
+        <div className="profile-index-ul-container">
+          {profilesList.map((profile, idx) => {
+            return (
+              <div key={idx} className="profile-index-li-container">
+                <img className="profile-img" src={window.defaultprofileURL} />
 
-        {profilesList.map((profile, idx) => {
-          return (
-            <div key={idx} className="profile-index-li-container">
-              <img className="profile-img" src={window.defaultprofileURL} />
-
-              <li className="profile-index-item">
-                <Link
-                  className="nav-session-link"
-                  to={`/profiles/${profile.id}`}
-                >
-                  View Profile
-                </Link>
-                <div>Name: {profile.fullname}</div>
-                <div> Summary: {profile.summary}</div>
-                <div>ZIP Code: {profile.zipcode}</div>
-                <div>
-                  Categories:
-                  {profile.categories.map(category =>
-                    category.category.concat(", ")
-                  )}
-                </div>
-              </li>
-            </div>
-          );
-        })}
+                <li className="profile-index-item">
+                  <Link
+                    className="nav-session-link"
+                    to={`/profiles/${profile.id}`}
+                  >
+                    View Profile
+                  </Link>
+                  <div>Name: {profile.fullname}</div>
+                  <div> Summary: {profile.summary}</div>
+                  <div>ZIP Code: {profile.zipcode}</div>
+                  <div className="profile-index-item">
+                    Categories:
+                    {profile.categories.map(category =>
+                      category.category.concat(", ")
+                    )}
+                  </div>
+                </li>
+              </div>
+            );
+          })}
+        </div>
       </section>
     );
   }

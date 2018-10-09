@@ -113,7 +113,9 @@ class ProfileForm extends React.Component {
         profile_id: this.props.currentUser.profile.id,
         category_id: category_id
       };
-      this.props.createProfileCategory(profileCategory);
+      this.props
+        .createProfileCategory(profileCategory)
+        .then(this.props.requestProfile(this.props.currentUser.profile.id));
     };
   }
 
@@ -125,7 +127,9 @@ class ProfileForm extends React.Component {
           obj.profile_id === this.props.currentUser.profile.id &&
           obj.category_id === category_id
       ).id;
-      this.props.deleteProfileCategory(profile_category_id);
+      this.props
+        .deleteProfileCategory(profile_category_id)
+        .then(this.props.requestProfile(this.props.currentUser.profile.id));
     };
   }
 
@@ -285,7 +289,10 @@ class ProfileForm extends React.Component {
             className={this.state.hide_edit ? "hidden" : ""}
           >
             <div className="ul-container">
-              <h2>Choose Categories</h2>
+              <h2>
+                Link your profile with after school program categories <br />{" "}
+                you would like to facilitate to help teachers find you!
+              </h2>
               <ul className="categories-list">{categoriesList1}</ul>
               <ul className="categories-list">{categoriesList2}</ul>
               <ul className="categories-list">{categoriesList3}</ul>

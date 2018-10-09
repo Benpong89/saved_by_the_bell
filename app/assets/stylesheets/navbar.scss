@@ -5,12 +5,8 @@
   padding: 0;
   outline: none;
   border: none;
-  // -webkit-box-sizing: border-box;
 }
-// *:before,
-// *:after {
-//   -webkit-box-sizing: border-box;
-// }
+
 .clearfix {
   *zoom: 1;
 }
@@ -191,6 +187,10 @@ section {
 
 .login-signup {
   text-align: right;
+}
+
+h2.greeting-username {
+  font-size: 20px !important;
 }
 
 // /* Portrait tablet to landscape and desktop */

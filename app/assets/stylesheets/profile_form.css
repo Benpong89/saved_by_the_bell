@@ -26,7 +26,10 @@
 }
 
 .ul-container h2 {
+  font-weight: normal;
   text-align: center;
+  font-size: 24px;
+  margin: 10px;
 }
 
 #profile-form2 ul {
@@ -47,11 +50,17 @@
   font-size: 24px;
 }
 
+#category-form-container {
+  background: white;
+  margin: 10px;
+  border-radius: 8px;
+}
+
 #category-form-container button {
   font-size: 16px;
-  margin: 10px;
   background: none;
-  width: 100px;
+  width: 120px;
+  padding: 10px;
 }
 
 #category-form-container button:hover {

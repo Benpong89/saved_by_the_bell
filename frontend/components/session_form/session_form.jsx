@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
                   type="text"
                   value={this.state.username}
                   onChange={this.update("username")}
-                  placeholder="username goes here"
+                  placeholder="username"
                   className="login-input"
                 />
               </label>
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
                   type="password"
                   value={this.state.password}
                   onChange={this.update("password")}
-                  placeholder="password goes here"
+                  placeholder="password"
                   className="login-input"
                 />
               </label>

@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.profile-index-ul-container {
+  display: flex;
+}
+
 .profile-index-li-container {
   display: flex;
   background-color: rgba(255, 255, 255, 0.5);
@@ -25,8 +29,8 @@
 }
 
 .profile-index-item-ul {
-  font-size: 16px;
-  list-style: none;
+  // font-size: 16px;
+  // list-style: none;
 }
 
 .profile-index-item {
@@ -50,9 +54,8 @@ li {
   border-style: solid;
   border: thin solid gray;
   font-size: 12px;
-  /* width: 100%; */
 }
 
-h2 {
-  font-size: 20px !important;
+h2.section-title {
+  font-size: 40px !important;
 }

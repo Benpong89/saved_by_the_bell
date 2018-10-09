@@ -8,11 +8,6 @@ export const receiveProfile = profile => ({
   profile
 });
 
-export const receiveCurrentProfile = profile => ({
-  type: RECEIVE_CURRENT_PROFILE,
-  profile
-});
-
 export const receiveAllProfiles = profiles => ({
   type: RECEIVE_ALL_PROFILES,
   profiles
