@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=K2D");
 
 .profile-index-container {
-  height: 100vh;
+  // background-image: -webkit-linear-gradient(#bdc3c7 0%, #2c3e50 40%);
   // background: url(school_desk.jpg) no-repeat center center fixed;
+  width: 100%;
+  height: 100vh;
   background: image_url("school_desk.jpg") no-repeat center center fixed;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 }
 
 .profile-index-ul-container {

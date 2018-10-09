@@ -10,6 +10,7 @@
 .clearfix {
   *zoom: 1;
 }
+
 html {
   font-family: Helvetica, arial, sans-serif;
   font-size: 12px;
@@ -24,10 +25,7 @@ html {
 .clearfix:after {
   clear: both;
 }
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
+
 header {
   width: 100%;
   height: auto;
@@ -110,13 +108,11 @@ nav > a:hover {
 
 section {
   width: 100%;
-  height: auto;
-  background-image: -webkit-linear-gradient(#bdc3c7 0%, #2c3e50 40%);
   height: 100vh;
-  // background: url(school_desk.jpg) no-repeat center center fixed;
   background: image_url("school_desk.jpg") no-repeat center center fixed;
   background-size: cover;
   display: flex;
+  overflow: hidden;
 }
 
 .section-left,
