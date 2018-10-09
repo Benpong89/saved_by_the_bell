@@ -25,11 +25,6 @@ p {
   /* width: fit-content; */
 }
 
-/* html {
-  width: fit-content;
-} */
-/* html {
-  height: 100vh;
-  background: image_url("school_desk.jpg") no-repeat center center fixed;
-  background-size: cover;
-} */
+.container {
+  margin-left: 20px;
+}
