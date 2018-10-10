@@ -44,19 +44,35 @@ class ProfileIndex extends React.Component {
 
                 <li className="profile-index-item">
                   <Link
-                    className="nav-session-link"
+                    className="section-title-view"
                     to={`/profiles/${profile.id}`}
                   >
                     View Profile
                   </Link>
-                  <div>Name: {profile.fullname}</div>
-                  <div> Summary: {profile.summary}</div>
-                  <div>ZIP Code: {zip}</div>
+                  <div>
+                    Name:{" "}
+                    <label className="profile-index-value">
+                      {profile.fullname}
+                    </label>
+                  </div>
+                  <div>
+                    {" "}
+                    Summary:{" "}
+                    <label className="profile-index-value">
+                      {profile.summary}
+                    </label>
+                  </div>
+                  <div>
+                    ZIP Code:{" "}
+                    <label className="profile-index-value">{zip}</label>
+                  </div>
                   <div className="profile-index-item">
                     Categories:
-                    {profile.categories.map(category =>
-                      category.category.concat(", ")
-                    )}
+                    <label className="profile-index-value">
+                      {profile.categories.map(category =>
+                        category.category.concat(", ")
+                      )}
+                    </label>
                   </div>
                 </li>
               </div>

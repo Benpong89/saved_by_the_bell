@@ -7,13 +7,14 @@
   background-size: cover;
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .profile-index-ul-container {
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
+  max-width: 1300px;
 }
 
 .profile-index-li-container {
@@ -23,6 +24,8 @@
   font-family: "K2D", sans-serif;
   width: 300px;
   border-radius: 7px;
+  height: fit-content;
+  min-height: 227.5px;
 }
 
 .profile-img {
@@ -35,6 +38,7 @@
 .profile-index-item {
   margin: 5px;
   padding: 10px;
+  font-size: 14px;
 }
 
 .section-left {
@@ -50,15 +54,35 @@ li {
 }
 
 .search-input input {
-  text-align: left;
-  padding: 10px;
+  text-align: center;
+  padding: 20px;
   margin: 5px;
   border-radius: 8px;
   border-style: solid;
   border: thin solid gray;
-  font-size: 12px;
+  font-size: 14px;
+  width: 300px;
 }
 
 h2.section-title {
   font-size: 40px !important;
+}
+
+.section-title-view {
+  font-size: 2em;
+  color: black;
+  // margin: 20px;
+  // margin-bottom: 0.3em;
+  // text-shadow: 0 3px 0px black, 0 4px 0px rgba(150, 150, 150, 0.5);
+  // text-align: right;
+}
+
+.profile-index-value {
+  display: inline;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.profile-index-item div {
+  font-weight: bold;
 }
