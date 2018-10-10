@@ -7,11 +7,15 @@ class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
     if (this.props.currentUser.profile) {
+      const zip =
+        String(this.props.currentUser.profile.zipcode).length < 5
+          ? "0" + this.props.currentUser.profile.zipcode
+          : this.props.currentUser.profile.zipcode;
       this.state = {
         id: this.props.currentUser.profile.id,
         fullname: this.props.currentUser.profile.fullname,
         email: this.props.currentUser.profile.email,
-        zipcode: this.props.currentUser.profile.zipcode,
+        zipcode: zip,
         summary: this.props.currentUser.profile.summary,
         description: this.props.currentUser.profile.description,
         resumeLink: this.props.currentUser.profile.resumeLink,
@@ -203,42 +207,36 @@ class ProfileForm extends React.Component {
             >
               <input
                 id="fullname-input"
-                type="integer"
                 placeholder="Full Name"
                 value={this.state.fullname}
                 onChange={this.update("fullname")}
               />
               <input
                 id="email-input"
-                type="integer"
                 placeholder="Email"
                 value={this.state.email}
                 onChange={this.update("email")}
               />
               <input
                 id="zipcode-input"
-                type="integer"
                 placeholder="Zipcode"
                 value={this.state.zipcode}
                 onChange={this.update("zipcode")}
               />
               <input
                 id="resume-input"
-                type="integer"
                 placeholder="Resume-Link"
                 value={this.state.resumeLink}
                 onChange={this.update("resumeLink")}
               />
               <textarea
                 id="summary-input"
-                type="integer"
                 placeholder="Summary"
                 value={this.state.summary}
                 onChange={this.update("summary")}
               />
               <textarea
                 id="description-input"
-                type="integer"
                 placeholder="Description"
                 value={this.state.description}
                 onChange={this.update("description")}

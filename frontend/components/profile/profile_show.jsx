@@ -18,6 +18,11 @@ class ProfileShow extends React.Component {
       profile => profile.id === parseInt(this.props.match.params.profileId)
     );
 
+    const zip =
+      String(currentProfile.zipcode).length < 5
+        ? "0" + currentProfile.zipcode
+        : currentProfile.zipcode;
+
     return (
       <div className="splash-container">
         <NavbarContainer />
@@ -26,10 +31,16 @@ class ProfileShow extends React.Component {
             <img className="profile-img-large" src={window.defaultprofileURL} />
             <li>Fullname: {currentProfile.fullname}</li>
             <li>Email: {currentProfile.email}</li>
-            <li>Zipcode: {currentProfile.zipcode}</li>
+            <li>Zipcode: {zip}</li>
             <li>Summary: {currentProfile.summary}</li>
             <li>Description: {currentProfile.description}</li>
             <li>resumeLink: {currentProfile.resumeLink}</li>
+            <li className="profile-index-item">
+              Categories:
+              {currentProfile.categories.map(category =>
+                category.category.concat(", ")
+              )}
+            </li>
           </ul>
           <div className="profile-show-ul">
             <h1>{currentProfile.fullname}s Profile </h1>

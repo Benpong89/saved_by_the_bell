@@ -33,6 +33,11 @@ class ProfileIndex extends React.Component {
         />
         <div className="profile-index-ul-container">
           {profilesList.map((profile, idx) => {
+            const zip =
+              String(profile.zipcode).length < 5
+                ? "0" + profile.zipcode
+                : profile.zipcode;
+
             return (
               <div key={idx} className="profile-index-li-container">
                 <img className="profile-img" src={window.defaultprofileURL} />
@@ -46,7 +51,7 @@ class ProfileIndex extends React.Component {
                   </Link>
                   <div>Name: {profile.fullname}</div>
                   <div> Summary: {profile.summary}</div>
-                  <div>ZIP Code: {profile.zipcode}</div>
+                  <div>ZIP Code: {zip}</div>
                   <div className="profile-index-item">
                     Categories:
                     {profile.categories.map(category =>
