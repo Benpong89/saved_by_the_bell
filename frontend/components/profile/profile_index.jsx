@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchInput, { createFilter } from "react-search-input";
 
-const KEYS_TO_FILTERS = ["fullname", "zipcode"];
+const KEYS_TO_FILTERS = ["fullname", "zipcode", "categories"];
 
 class ProfileIndex extends React.Component {
   constructor(props) {
