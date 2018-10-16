@@ -31,8 +31,16 @@ class SessionForm extends React.Component {
 
   guestlogin(e) {
     e.preventDefault();
-    const guest = { username: "benpong89", password: "123456" };
-    this.props.processForm(guest);
+    const randomUsers = [
+      { username: "benpong89", password: "123456" },
+      { username: "johnsmith90", password: "123456" },
+      { username: "janedoe91", password: "123456" }
+    ];
+
+    const randomUser =
+      randomUsers[Math.floor(Math.random() * randomUsers.length)];
+
+    this.props.processForm(randomUser);
   }
 
   resetErrors() {
