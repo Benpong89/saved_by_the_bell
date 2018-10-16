@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchInput, { createFilter } from "react-search-input";
 
-const KEYS_TO_FILTERS = ["fullname", "zipcode", "categories"];
+const KEYS_TO_FILTERS = ["fullname", "zipcode", "categories.category"];
 
 class ProfileIndex extends React.Component {
   constructor(props) {
@@ -38,6 +38,10 @@ class ProfileIndex extends React.Component {
                 ? "0" + profile.zipcode
                 : profile.zipcode;
 
+            const category = profile.categories
+              .map(category => category.category)
+              .join(" ");
+
             return (
               <div key={idx} className="profile-index-li-container">
                 <img className="profile-img" src={window.defaultprofileURL} />
@@ -56,7 +60,6 @@ class ProfileIndex extends React.Component {
                     </label>
                   </div>
                   <div>
-                    {" "}
                     Summary:{" "}
                     <label className="profile-index-value">
                       {profile.summary}
@@ -66,13 +69,9 @@ class ProfileIndex extends React.Component {
                     ZIP Code:{" "}
                     <label className="profile-index-value">{zip}</label>
                   </div>
-                  <div className="profile-index-item">
-                    Categories:
-                    <label className="profile-index-value">
-                      {profile.categories.map(category =>
-                        category.category.concat(", ")
-                      )}
-                    </label>
+                  <div>
+                    Category:{" "}
+                    <label className="profile-index-value">{category}</label>
                   </div>
                 </li>
               </div>
@@ -92,6 +91,9 @@ export default ProfileIndex;
 //   ))}
 // </ul>;
 
+// {profile.categories.map(category =>
+//   category.category.concat(", ")
+// )}
 // <div className="profile-index-li-container">
 //   <img className="profile-img" src={window.defaultprofileURL} />
 //   <li className="profile-index-item">
@@ -103,3 +105,17 @@ export default ProfileIndex;
 //   </li>
 // </div>
 //
+
+// const categoriesList = profile.categories.filter(
+//   createFilter(this.state.searchTerm, KEYS_TO_FILTERS)
+// );
+//
+// debugger;
+
+// const category = categoriesList.map(category => category.category);
+// categoriesList.map(category => category.categories)[0]
+
+// const category = categoriesList.map((cat, idx) => {
+//   return <li key={idx}>{cat.category}</li>;
+// });
+// debugger;
