@@ -100,7 +100,9 @@ class SessionForm extends React.Component {
               <button
                 className={
                   "session-submit" +
-                  (this.props.formType === "Sign up here!" ? " hidden" : "")
+                  (this.props.formType === "Volunteers sign up here!"
+                    ? " hidden"
+                    : "")
                 }
                 onClick={this.guestlogin}
               >
