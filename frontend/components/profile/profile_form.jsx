@@ -46,12 +46,6 @@ class ProfileForm extends React.Component {
     this.publishProfile = this.publishProfile.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.currentUser.profile) {
-      this.props.requestProfile(this.props.currentUser.profile.id);
-    } else return null;
-  }
-
   async createProfile(e) {
     e.preventDefault();
     const profile = {
@@ -111,8 +105,9 @@ class ProfileForm extends React.Component {
       id: this.props.currentUser.profile.id,
       published: !this.state.published
     });
-    const published = !this.state.published;
-    this.setState({ published });
+    this.setState({
+      published: !this.state.published
+    });
   }
 
   createProfileCategory(category_id) {

@@ -40,25 +40,3 @@ class App extends React.Component {
 }
 
 export default App;
-// <ProtectedRoute
-//   exact
-//   path="/users/:userId/category"
-//   component={CategoryFormContainer}
-// />
-
-// <Route exact path="/profile" component={ProfileFormContainer} />
-// <AuthRoute
-//   exact
-//   path="/profile/:currentUser"
-//   component={ProfileFormContainer}
-// />
-// <ProtectedRoute exact path="/profiles/new" component={ProfileFormContainer} />;
-
-// <Route exact path="/" component={Splash} />
-// <Modal />
-// <Switch>
-//   <AuthRoute exact path="/signin" component={SignInFormContainer} />
-//   <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-//   <ProtectedRoute exact path="/main" component={MainContainer} />
-// </Switch>
-//

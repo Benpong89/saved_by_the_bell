@@ -44,5 +44,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-
-// <button className="learn-more">View all volunteers</button>

@@ -84,38 +84,3 @@ class ProfileIndex extends React.Component {
 }
 
 export default ProfileIndex;
-
-// <ul className="profile-index-item-ul">
-//   {this.props.profiles.map((profile, idx) => (
-//     <ProfileIndexItem key={idx} profile={profile} />
-//   ))}
-// </ul>;
-
-// {profile.categories.map(category =>
-//   category.category.concat(", ")
-// )}
-// <div className="profile-index-li-container">
-//   <img className="profile-img" src={window.defaultprofileURL} />
-//   <li className="profile-index-item">
-//     <span>{profile.fullname}</span>
-//     <div>{profile.summary}</div>
-//     <div>{profile.description}</div>
-//     <div>{profile.email}</div>
-//     <div>{profile.zipcode}</div>
-//   </li>
-// </div>
-//
-
-// const categoriesList = profile.categories.filter(
-//   createFilter(this.state.searchTerm, KEYS_TO_FILTERS)
-// );
-//
-// debugger;
-
-// const category = categoriesList.map(category => category.category);
-// categoriesList.map(category => category.categories)[0]
-
-// const category = categoriesList.map((cat, idx) => {
-//   return <li key={idx}>{cat.category}</li>;
-// });
-// debugger;

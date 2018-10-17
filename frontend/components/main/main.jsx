@@ -10,11 +10,6 @@ class Main extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.requestAllProfiles();
-  //   this.props.requestAllCategories();
-  // }
-
   render() {
     return (
       <div className="main-container">

@@ -117,18 +117,3 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-
-// <div className="login-form-container">
-//   <header className="splash-header">
-//     <div className="logo-nav">
-//       <Link to="/">
-//         <img className="img-logo" src={window.newlogoURL} />
-//       </Link>
-//       <Link className="text-logo" to="/">
-//         <h1 className="text-logo">Saved by the Bell</h1>
-//       </Link>
-//     </div>
-//     <GreetingContainer />
-//   </header>
-// </div>
-//

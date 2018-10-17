@@ -12,8 +12,6 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
-  // requestAllProfiles: profiles => dispatch(requestAllProfiles(profiles)),
-  // requestAllCategories: categories => dispatch(requestAllCategories(categories))
 });
 
 export default connect(

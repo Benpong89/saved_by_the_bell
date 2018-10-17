@@ -60,17 +60,3 @@ class Splash extends React.Component {
 }
 
 export default withRouter(Splash);
-
-// <section className="clearfix">
-//   <div className="container">
-//     <div className="section-left">
-//       <h1 className="section-title">See our volunteers!</h1>
-//     </div>
-//     <div className="section-right">
-//       <Link className="learn-more" to="/main">
-//         View all volunteers
-//       </Link>
-//     </div>
-//   </div>
-//
-//   <br />
