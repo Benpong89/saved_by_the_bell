@@ -20,7 +20,6 @@ RSpec.describe User, type: :model do
   # Error Messages
 
   subject(:user) { FactoryBot.build(:user) }
-  # subject(:user) { User.new(username: "Tester", password: '123456')}
 
   describe 'validations' do
     it { should validate_presence_of(:username) }
@@ -28,8 +27,6 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
-    it 'should have one profile'
+    it { should have_one(:profile) }
   end
-
-  # pending "add some examples to (or delete) #{__FILE__}"
 end
