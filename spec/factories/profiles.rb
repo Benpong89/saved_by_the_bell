@@ -16,12 +16,19 @@
 #  updated_at  :datetime         not null
 #
 
-class Profile < ApplicationRecord
-  validates :fullname, :email, presence: true
-  validates_uniqueness_of :user_id, allow_blank: true, allow_nil: true
-
-  belongs_to :user
-  has_many :profile_categories
-  has_many :categories,
-           through: :profile_categories
+FactoryBot.define do
+  factory :profile do
+    fullname { Faker::Name.name }
+    email { Faker::Internet.email }
+  end
 end
+
+# class Profile < ApplicationRecord
+#   validates :fullname, :email, presence: true
+#   validates_uniqueness_of :user_id, allow_blank: true, allow_nil: true
+#
+#   belongs_to :user
+#   has_many :profile_categories
+#   has_many :categories,
+#            through: :profile_categories
+# end
