@@ -9,7 +9,7 @@
 #
 
 class Category < ApplicationRecord
-  validates :category, presence: true
+  validates :category, presence: true, uniqueness: true
 
   has_many :profile_categories
   has_many :profiles,

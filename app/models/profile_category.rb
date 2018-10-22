@@ -10,7 +10,7 @@
 #
 
 class ProfileCategory < ApplicationRecord
-  validates :profile_id, uniqueness: { scope: %i[profile_id category_id] }
+  validates :profile_id, uniqueness: { scope: %i[profile_id category_id] }, presence: true
 
   belongs_to :category
   belongs_to :profile

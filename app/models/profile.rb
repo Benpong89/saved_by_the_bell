@@ -17,11 +17,14 @@
 #
 
 class Profile < ApplicationRecord
+  validates :email, :user_id, presence: true, uniqueness: true
   validates :fullname, :email, presence: true
-  validates_uniqueness_of :user_id, allow_blank: true, allow_nil: true
 
   belongs_to :user
   has_many :profile_categories
   has_many :categories,
            through: :profile_categories
 end
+
+#
+# validates_uniqueness_of :user_id, allow_blank: true, allow_nil: true
