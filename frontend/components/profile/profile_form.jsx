@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavbarContainer from "../navbar/navbar_container";
 import { merge } from "lodash";
-import { receiveCurrentUser } from "../../actions/session_actions";
+// import { receiveCurrentUser } from "../../actions/session_actions";
+import { receiveProfile } from "../../actions/profile_actions";
 
 class ProfileForm extends React.Component {
   constructor(props) {
@@ -44,6 +45,8 @@ class ProfileForm extends React.Component {
     this.createProfileCategory = this.createProfileCategory.bind(this);
     this.deleteProfileCategory = this.deleteProfileCategory.bind(this);
     this.publishProfile = this.publishProfile.bind(this);
+
+    dispatch(receiveProfile(this.props.currentUser.profile));
   }
 
   async createProfile(e) {

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import ProfileIndex from "./profile_index";
+import { requestAllProfiles } from "../../actions/profile_actions.js";
 
 const mapStateToProps = ({
   session,
@@ -14,7 +15,8 @@ const mapStateToProps = ({
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  requestAllProfiles: profiles => dispatch(requestAllProfiles(profiles))
 });
 
 export default connect(
