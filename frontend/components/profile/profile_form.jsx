@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavbarContainer from "../navbar/navbar_container";
 import { merge } from "lodash";
+import { receiveCurrentUser } from "../../actions/session_actions";
 
 class ProfileForm extends React.Component {
   constructor(props) {
@@ -34,7 +35,6 @@ class ProfileForm extends React.Component {
         description: "",
         resumeLink: "",
         user_id: "",
-        published: false,
         created: false,
         hide_edit: true
       };
@@ -101,13 +101,14 @@ class ProfileForm extends React.Component {
 
   async publishProfile(e) {
     e.preventDefault();
+    await this.setState({
+      published: !this.state.published
+    });
     await this.props.updateProfile({
       id: this.props.currentUser.profile.id,
-      published: !this.state.published
+      published: this.state.published
     });
-    this.setState({
-      published: !this.state.published
-    });
+    // dispatch(receiveCurrentUser(this.props.currentUser));
   }
 
   createProfileCategory(category_id) {
