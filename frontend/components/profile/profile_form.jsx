@@ -6,15 +6,16 @@ class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
     if (this.props.currentUser.profile) {
-      const zip =
-        String(this.props.currentUser.profile.zipcode).length < 5
-          ? "0" + this.props.currentUser.profile.zipcode
-          : this.props.currentUser.profile.zipcode;
+      // const zip =
+      //   String(this.props.currentUser.profile.zipcode).length < 5
+      //     ? "0" + this.props.currentUser.profile.zipcode
+      //     : this.props.currentUser.profile.zipcode;
       this.state = {
         id: this.props.currentUser.profile.id,
         fullname: this.props.currentUser.profile.fullname,
         email: this.props.currentUser.profile.email,
-        zipcode: zip,
+        // zipcode: zip,
+        zipcode: this.props.currentUser.profile.zip,
         summary: this.props.currentUser.profile.summary,
         description: this.props.currentUser.profile.description,
         resumeLink: this.props.currentUser.profile.resumeLink,
@@ -97,9 +98,9 @@ class ProfileForm extends React.Component {
     });
   }
 
-  publishProfile(e) {
+  async publishProfile(e) {
     e.preventDefault();
-    this.setState({
+    await this.setState({
       published: !this.state.published
     });
     this.props.updateProfile({
@@ -215,6 +216,7 @@ class ProfileForm extends React.Component {
                 placeholder="Zipcode"
                 value={this.state.zipcode}
                 onChange={this.update("zipcode")}
+                maxLength="5"
               />
               <input
                 id="resume-input"
