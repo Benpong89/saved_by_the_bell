@@ -6,16 +6,11 @@ class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
     if (this.props.currentUser.profile) {
-      // const zip =
-      //   String(this.props.currentUser.profile.zipcode).length < 5
-      //     ? "0" + this.props.currentUser.profile.zipcode
-      //     : this.props.currentUser.profile.zipcode;
       this.state = {
         id: this.props.currentUser.profile.id,
         fullname: this.props.currentUser.profile.fullname,
         email: this.props.currentUser.profile.email,
-        // zipcode: zip,
-        zipcode: this.props.currentUser.profile.zip,
+        zipcode: this.props.currentUser.profile.zipcode,
         summary: this.props.currentUser.profile.summary,
         description: this.props.currentUser.profile.description,
         resumeLink: this.props.currentUser.profile.resumeLink,

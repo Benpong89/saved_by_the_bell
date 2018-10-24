@@ -33,11 +33,6 @@ class ProfileIndex extends React.Component {
         />
         <div className="profile-index-ul-container">
           {profilesList.map((profile, idx) => {
-            const zip =
-              String(profile.zipcode).length < 5
-                ? "0" + profile.zipcode
-                : profile.zipcode;
-
             const category = profile.categories
               .map(category => category.category)
               .join(" ");
@@ -67,7 +62,9 @@ class ProfileIndex extends React.Component {
                   </div>
                   <div>
                     ZIP Code:{" "}
-                    <label className="profile-index-value">{zip}</label>
+                    <label className="profile-index-value">
+                      {profile.zipcode}
+                    </label>
                   </div>
                   <div>
                     Category:{" "}
