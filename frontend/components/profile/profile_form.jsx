@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavbarContainer from "../navbar/navbar_container";
-import { merge } from "lodash";
-// import { receiveCurrentUser } from "../../actions/session_actions";
-import { receiveProfile } from "../../actions/profile_actions";
 
 class ProfileForm extends React.Component {
   constructor(props) {
@@ -45,8 +42,6 @@ class ProfileForm extends React.Component {
     this.createProfileCategory = this.createProfileCategory.bind(this);
     this.deleteProfileCategory = this.deleteProfileCategory.bind(this);
     this.publishProfile = this.publishProfile.bind(this);
-
-    dispatch(receiveProfile(this.props.currentUser.profile));
   }
 
   async createProfile(e) {
@@ -102,16 +97,15 @@ class ProfileForm extends React.Component {
     });
   }
 
-  async publishProfile(e) {
+  publishProfile(e) {
     e.preventDefault();
-    await this.setState({
+    this.setState({
       published: !this.state.published
     });
-    await this.props.updateProfile({
+    this.props.updateProfile({
       id: this.props.currentUser.profile.id,
       published: this.state.published
     });
-    // dispatch(receiveCurrentUser(this.props.currentUser));
   }
 
   createProfileCategory(category_id) {

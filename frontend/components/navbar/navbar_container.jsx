@@ -4,6 +4,7 @@ import { logout } from "../../actions/session_actions";
 import { requestAllProfiles } from "../../actions/profile_actions.js";
 import { requestAllCategories } from "../../actions/category_actions.js";
 import { requestAllProfileCategories } from "../../actions/profile_category_actions.js";
+import { requestUser } from "../../actions/session_actions.js";
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
@@ -12,6 +13,7 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  requestUser: id => dispatch(requestUser(id)),
   logout: () => dispatch(logout()),
   requestAllProfiles: profiles => dispatch(requestAllProfiles(profiles)),
   requestAllCategories: categories =>

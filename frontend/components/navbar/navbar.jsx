@@ -11,6 +11,10 @@ class Navbar extends React.Component {
     this.props.requestAllProfiles();
     this.props.requestAllCategories();
     this.props.requestAllProfileCategories();
+
+    if (this.props.currentUser) {
+      this.props.requestUser(this.props.currentUser.id);
+    }
   }
 
   render() {

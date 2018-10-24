@@ -12,7 +12,6 @@ class ProfileIndex extends React.Component {
       searchTerm: ""
     };
     this.searchUpdated = this.searchUpdated.bind(this);
-    // this.props.requestAllProfiles();
   }
 
   searchUpdated(term) {
